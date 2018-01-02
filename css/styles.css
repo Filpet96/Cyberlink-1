@@ -1,0 +1,155 @@
+* {
+   margin: 0;
+   font-family: montserrat;
+   font-size: 18px;
+}
+a {
+   outline: none;
+   text-decoration: none;
+   color: black;
+   margin: 20px;
+   text-align: center;
+}
+body {
+   /*background-image: url("../img/bg.jpg");*/
+   /*background-size: cover;*/
+   background-color: white;
+}
+
+/*.wrapper {
+   position: absolute;
+   background-color: white;
+   height: 96%;
+   width: 98%;
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+   border-radius: 10px;
+}*/
+h1 {
+   text-align: center;
+   margin-bottom: 10px;
+   font-size: 22px;
+}
+p {
+   font-size: 16px;
+   margin-top: 100px;
+   margin-left: 50px;
+}
+
+.index {
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%)
+}
+
+/* EVERYTHING REGISTER-FORM */
+.register-form {
+   position: absolute;
+   top: 15%;
+   margin-left: 50px;
+}
+.register-btn {
+   padding: 10px;
+   padding-left: 34px;
+   padding-right: 34px;
+   width: 150px;
+   height: 50px;
+   text-align: center;
+   background-color: #e6e6e6;
+   border: 2px solid #bfbfbf;
+   font-size: 26px;
+}
+.login-btn {
+   padding: 10px;
+   padding-left: 50px;
+   padding-right: 50px;
+   text-align: center;
+   background-color: #e6e6e6;
+   border: 2px solid #bfbfbf;
+   font-size: 26px;
+}
+
+.navbar {
+   position: fixed;
+   width: 100%;
+   background-color: lightgrey;
+   height: 50px;
+   padding: 10px;
+   text-align: center;
+   z-index: 1;
+}
+
+.login {
+   background-color: lightgrey;
+   padding: 20px;
+   border-radius: 10px;
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+}
+input[type] {
+   background-color: #e6e6e6;
+   padding: 5px;
+   outline: none;
+   margin: 10px;
+   margin-left: 20px;
+   width: 400px;
+}
+input[type=password] {
+   margin-left: 6px;
+}
+input[type=topic] {
+   position: absolute;
+   top: 20%;
+   left: 32%;
+}
+button[type=submit-post] {
+   position: absolute;
+   top: 85%;
+   left: 32%;
+}
+textarea[type=post] {
+   position: absolute;
+   top: 30%;
+   left: 32%;
+   width: 500px;
+   height: 400px;
+   outline: none;
+   resize: none;
+}
+textarea[type=biography] {
+   outline: none;
+   resize: none;
+   height: 200px;
+   width: 400px;
+}
+button[type=submit], .register {
+   background-color: #e6e6e6;
+   border: 2px solid #bfbfbf;
+   font-size: 16px;
+   margin-top: 10px;
+   width: 150px;
+   text-align: center;
+   outline: none;
+   cursor: pointer;
+}
+
+.welcome {
+   padding: 10px;
+   background-color: white;
+   border: 2px solid white;
+   border-radius: 20px;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%)
+}
