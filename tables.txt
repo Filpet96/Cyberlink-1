@@ -1,0 +1,27 @@
+CREATE TABLE "posts" (
+        `id`       INTEGER NOT NULL,
+        `post_id`       INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        `title` VARCHAR NOT NULL,
+        `description`   VARCHAR NOT NULL,
+        `url`   VARCHAR NOT NULL,
+        `posted`      VARCHAR,
+        `up_vote` INTEGER,
+        `down_vote` INTEGER
+);
+
+
+CREATE TABLE "votes" (
+         `vote_id`       INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
+         `post_id`       INTEGER,
+         `id`       INTEGER,
+         `up_vote` INTEGER,
+         `down_vote` INTEGER
+);
+
+
+CREATE TABLE "comments" (
+         `comment_id`       INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+         `post_id`         INTEGER NOT NULL,
+         `comment`       VARCHAR NOT NULL,
+         `up_vote` INTEGER
+);

@@ -1,0 +1,558 @@
+* {
+   margin: 0px;
+   font-family: Montserrat;
+   font-size: 16px;
+}
+body {
+   color: #404040;
+   background-color: white;
+}
+a {
+   text-decoration: none;
+   outline: none;
+   margin: 20px;
+   color: white;
+   font-weight: bold;
+}
+a:hover {
+   color: blue;
+}
+footer {
+   background-color: #404040;
+   color: white;
+   position: fixed;
+   bottom: 0%;
+   height: 2%;
+   width: 100%;
+   padding: 10px;
+   /* padding-top: 20px; */
+   text-align: center;
+   font-size: 12px;
+}
+label {
+
+}
+.btn {
+   border: 2px solid lightgrey;
+   color: black;
+   outline: none;
+   cursor: pointer;
+   font-size: 18px;
+   background-color: #e0ebeb;
+}
+.z-index {
+   z-index: 1;
+}
+.x-index {
+   z-index: -1;
+}
+.opacity {
+   opacity: 0;
+}
+
+.header-text{
+   font-size: 32px;
+   position: fixed;
+   top: 10%;
+   left: 2%;
+}
+
+/* NAVBAR */
+.nav-wrapper {
+   position: relative;
+   background-color: #404040;
+   color: white;
+   width: 100%;
+   height: 35px;
+   padding-top: 15px;
+   font-size: 18px;
+}
+.navbar-left {
+   float: left;
+}
+.navbar-right {
+   float: right;
+}
+
+/* HOME-PAGE */
+.home-wrapper {
+   position: absolute;
+   top: 20%;
+}
+
+
+/* LOGIN-PAGE */
+h6 {
+   position: absolute;
+   top: 150%;
+   left: 26.5%;
+   text-align: center;
+}
+.register-link {
+   color: #404040;
+   margin: 0px;
+   text-decoration: underline;
+}
+.login-wrapper {
+   position: absolute;
+   top: 20%;
+   left: 40%;
+}
+.form-group {
+   text-align: center;
+   margin: 20px;
+}
+input[type=login] {
+   width: 300px;
+   height: 20px;
+   font-size: 12px;
+}
+input[type=password] {
+   width: 300px;
+   height: 20px;
+   font-size: 12px;
+}
+.login-btn {
+   position: absolute;
+   left: 36%;
+   font-size: 22px;
+   padding: 10px;
+}
+
+/* REGISTER-PAGE */
+textarea {
+   border: 1px solid lightgrey;
+   color: grey;
+
+}
+.register-wrapper {
+   position: absolute;
+   top: 15%;
+   left: 30%;
+}
+.register-btn {
+   position: absolute;
+   left: 34%;
+   top: 110%;
+}
+input[type=file] {
+   /*background-color: lightgrey;*/
+   border: 1px solid lightgrey;
+   margin-left: 37px;
+   width: 400px;
+}
+input[type=name] {
+   width: 400px;
+   margin: 10px;
+   outline: none;
+   margin-left: 43px;
+}
+input[type=text] {
+   width: 400px;
+   margin: 10px;
+   outline: none;
+}
+textarea[type=email] {
+   width: 400px;
+   margin: 10px;
+   outline: none;
+   margin-left: 46px;
+   resize: none;
+}
+/*input[type=password] {
+   width: 400px;
+   margin: 10px;
+   outline: none;
+   margin-left: 13px;
+}*/
+label[for=biography] {
+   float: left;
+   margin-top: 10px;
+}
+textarea[type=biography] {
+   margin-left: 14px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   width: 400px;
+   height: 200px;
+   resize: none;
+   border-color: lightgrey;
+   outline: none;
+}
+
+/* CREATE-POST */
+#create-post {
+   position: absolute;
+   top: 105%;
+   left: 37.5%;
+   padding: 10px;
+   padding-left: 30px;
+   padding-right: 30px;
+   outline: none;
+}
+.create-post {
+   position: absolute;
+   top: 45%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+}
+
+input[type=title] {
+   width: 400px;
+   margin: 10px;
+   outline: none;
+}
+input[type=url] {
+   width: 400px;
+   margin: 10px;
+   outline: none;
+}
+textarea[name=description] {
+   width: 400px;
+   height: 200px;
+   margin: 10px;
+   resize: none;
+   border-color: lightgrey;
+   outline: none;
+}
+
+/* FEED-PAGE*/
+hr {
+   width: 100%;
+   margin-bottom: 0px;
+   color: white;
+}
+.votes {
+   position: absolute;
+   top: 8%;
+   left: 1%;
+}
+.edit-post {
+   position: absolute;
+   width: 75%;
+   left: 20%;
+   top: 20%;
+}
+.comment {
+   position: absolute;
+   bottom: 3%;
+   right: 1%;
+   background-image: url("../img/comment.png");
+   background-size: cover;
+   background-size: 100%;
+   background-color: transparent;
+   height: 30px;
+   width: 30px;
+   cursor: pointer;
+   border: none;
+   opacity: 0.5;
+   outline: none;
+}
+textarea[type=title]{
+   resize: none;
+   color: black;
+   border: 1px solid black;
+   padding: 5px;
+   height: 30px;
+   width: 80%;
+   margin-top: -30px;
+   margin-left: 35px;
+}
+textarea[type=description]{
+   resize: none;
+   color: black;
+   border: 1px solid black;
+   padding: 5px;
+   height: 100px;
+   width: 80%;
+   margin-top: -2px;
+   margin-left: 35px;
+}
+textarea[type="url"]{
+   resize: none;
+   color: black;
+   border: 1px solid black;
+   padding: 5px;
+   height: 50px;
+   width: 80%;
+   margin-top: -12px;
+   margin-left: 35px;
+}
+
+.edit-title {
+   position: absolute;
+   width: 450px;
+   height: 40px;
+   background-color: white;
+   margin-top: -30px;
+   resize: none;
+   color: black;
+   border: 1px solid lightgrey;
+   padding: 5px;
+}
+.edit-description {
+   position: absolute;
+   width: 450px;
+   height: 100px;
+   background-color: white;
+   margin-top: -52px;
+   resize: none;
+   color: black;
+   border: 1px solid lightgrey;
+   padding: 5px;
+}
+.edit-url {
+   position: absolute;
+   width: 450px;
+   height: 50px;
+   background-color: white;
+   margin-left: 20px;
+   margin-top: -15px;
+   resize: none;
+   color: black;
+   border: 1px solid lightgrey;
+   padding: 5px;
+}
+.save-changes {
+   position: absolute;
+   top: 100%;
+   left: 36%;
+   background-color: white;
+   border-radius: 5px;
+   border: 1px solid black;
+   outline: none;
+   cursor: pointer;
+}
+
+.avatar-img {
+   width: 100px;
+   height: 120px;
+   margin-top: 20px;
+}
+.side-info {
+   position: absolute;
+   top: 5%;
+   text-align: center;
+   /*left: 1%;*/
+   border-right: 1px solid lightgrey;
+   height: 90%;
+   width: 150px;
+}
+.side-avatar {
+   position: absolute;
+   left: 1.5%;
+   top: 1.5%;
+   width: 155px;
+   height: 195px;
+}
+.member {
+   position: absolute;
+   top: 70%;
+   left: 30%;
+   font-size: 12px;
+   color: #404040;
+}
+.user {
+   color: red;
+   margin: 0px;
+}
+.feed-wrapper {
+   position: absolute;
+   top: 20%;
+}
+.img-url {
+   color: blue;
+   margin: 0px;
+}
+.post-id {
+   position: absolute;
+   background-color: lightgrey;
+   border: 1px solid grey;
+   width: 99.7%;
+   padding-left: 2px;
+
+   color: black;
+}
+.avatar {
+   position: relative;
+   left: 1%;
+}
+.post {
+   position: absolute;
+   width: 50%;
+   z-index: -1;
+   left: 25%;
+   margin-top: 12px;
+   margin-bottom: 100px;
+
+   background-color: #f2f2f2;
+
+}
+.post-content {
+   position: relative;
+   height: 300px;
+   border-bottom: 10px solid white;
+   background-color: #f2f2f2;
+   padding-right: 20px;
+}
+.post-title {
+   position: absolute;
+   left: 25%;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+.post-url {
+   position: absolute;
+   left: 25%;
+   top: 55%;
+   font-size: 22px;
+   color: blue;
+   width: 100px;
+
+}
+.post-description {
+   position: absolute;
+   left: 25%;
+   top: 35%;
+   margin-left: 20px;
+
+}
+.post-time {
+   position: absolute;
+   bottom: 0%;
+   width: 100%;
+   height: 15%;
+   font-family: tahoma;
+   background-color: lightgrey;
+   border: 1px solid grey;
+   font-size: 12px;
+   color: black;
+
+}
+.delete-post {
+   position: absolute;
+   bottom: 4%;
+   right: 12%;
+   background-image: url("../img/delete.png");
+   background-size: cover;
+   background-size: 100%;
+   background-color: transparent;
+   height: 20px;
+   width: 20px;
+   cursor: pointer;
+   border: none;
+   opacity: 0.5;
+   outline: none;
+}
+#delete {
+   position: absolute;
+   right: 5%;
+}
+.edit-post-btn {
+   position: absolute;
+   bottom: 4%;
+   right: 8%;
+   background-image: url("../img/edit.png");
+   background-size: cover;
+   background-size: 100%;
+   background-color: transparent;
+   height: 20px;
+   width: 20px;
+   cursor: pointer;
+   border: none;
+   opacity: 0.5;
+   outline: none;
+}
+/* PROFILE-PAGE */
+.profile-wrapper {
+   position: absolute;
+   left: 15%;
+   top: 11%;
+   height: 400px;
+   width: 1000px;
+   border: 2px solid grey;
+}
+.profile-avatar {
+   position: absolute;
+   top: 2.5%;
+   left: 1%;
+   /*background-image:    url("../img/Hank.jpg");*/
+   background-size: cover;
+   background-size: 100%;
+   width: 160px;
+   height: 200px;
+   border: 1px solid #404040;
+}
+img {
+   width: 158px;
+   height: 198px;
+
+}
+.profile-username {
+   position: absolute;
+   left: 30%;
+   top: 5%;
+}
+.profile-name {
+   position: absolute;
+   left: 30%;
+   top: 20%;
+}
+.profile-bio {
+   position: absolute;
+   left: 30%;
+   top: 50%;
+}
+.profile-email {
+   position: absolute;
+   left: 30%;
+   top: 35%;
+}
+.profile-password {
+   position: absolute;
+   left: 30%;
+   top: 80%;
+}
+
+.edit {
+   background-image: url("../img/edit.png");
+   background-size: cover;
+   border-radius: 5px;
+   border: none;
+   height: 30px;
+   width: 30px;
+   position: absolute;
+   bottom: -2%;
+   right: -1%;
+   cursor: pointer;
+   outline: none;
+   opacity: 0.7;
+}
+
+.profile-password {
+   position: absolute;
+   left: 30%;
+}
+.change-avatar {
+   position: absolute;
+   top: 83%;
+   left: 6.5%;
+   border: 2px solid #404040;
+   cursor: pointer;
+   outline: none;
+}
+form[name=avatar] {
+   position: absolute;
+   top: 60%;
+   left: -3%;
+}
+input[name=avatar] {
+   width: 220px;
+}
+.upload-avatar {
+   position: absolute;
+   bottom: -110%;
+   left: 14%;
+   width: 100px;
+}
