@@ -17,6 +17,16 @@ function edit_post() {
 
 }
 
+function post_comment() {
+   document.querySelector(".comment").classList.remove("opacity");
+   document.querySelector(".comment").classList.add("z-index");
+}
+
+function save_comment() {
+   document.querySelector(".comment").classList.add("x-index");
+   document.querySelector(".comment").classList.remove("z-index");
+}
+
 function save_changes() {
    document.querySelector(".edit-title").classList.add("x-index");
 }

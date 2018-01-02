@@ -10,18 +10,22 @@ CREATE TABLE "posts" (
 );
 
 
-CREATE TABLE "votes" (
-         `vote_id`       INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-         `post_id`       INTEGER,
-         `id`       INTEGER,
-         `up_vote` INTEGER,
-         `down_vote` INTEGER
+CREATE TABLE "users" (
+        `id`    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        `name`  VARCHAR NOT NULL,
+        `username`      VARCHAR NOT NULL UNIQUE,
+        `email` VARCHAR NOT NULL,
+        `password`      VARCHAR NOT NULL,
+        `biography`     VARCHAR NOT NULL,
+        `img`           VARCHAR,
+        `joined`   VARCHAR
 );
 
 
 CREATE TABLE "comments" (
+         `id`       INTEGER NOT NULL,
          `comment_id`       INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
          `post_id`         INTEGER NOT NULL,
          `comment`       VARCHAR NOT NULL,
-         `up_vote` INTEGER
+         `posted`       VARCHAR
 );

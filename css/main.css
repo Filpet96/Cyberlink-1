@@ -80,6 +80,16 @@ label {
    top: 20%;
 }
 
+/* COMMENTS-PAGE */
+.comments {
+   position: absolute;
+   height: 50%;
+   width: 50%;
+   top: 47%;
+   left: 25%;
+   border: 1px solid grey;
+   color: black;
+}
 
 /* LOGIN-PAGE */
 h6 {
@@ -225,16 +235,16 @@ hr {
 }
 .votes {
    position: absolute;
-   top: 8%;
-   left: 1%;
-}
-.edit-post {
-   position: absolute;
-   width: 75%;
-   left: 20%;
-   top: 20%;
+   top: 60%;
+   right: 1%;
 }
 .comment {
+   position: absolute;
+   top: 45%;
+   right: -30%;
+}
+
+.comment-btn {
    position: absolute;
    bottom: 3%;
    right: 1%;
@@ -248,6 +258,14 @@ hr {
    border: none;
    opacity: 0.5;
    outline: none;
+}
+textarea[type="comment"] {
+   resize: none;
+   color: black;
+   border: 1px solid black;
+   width: 200px;
+   height: 70px;
+   font-size: 12px;
 }
 textarea[type=title]{
    resize: none;
@@ -332,7 +350,7 @@ textarea[type="url"]{
 }
 .side-info {
    position: absolute;
-   top: 5%;
+   top: 10%;
    text-align: center;
    /*left: 1%;*/
    border-right: 1px solid lightgrey;
@@ -348,7 +366,7 @@ textarea[type="url"]{
 }
 .member {
    position: absolute;
-   top: 70%;
+   top: 63%;
    left: 30%;
    font-size: 12px;
    color: #404040;
@@ -385,7 +403,6 @@ textarea[type="url"]{
    left: 25%;
    margin-top: 12px;
    margin-bottom: 100px;
-
    background-color: #f2f2f2;
 
 }
@@ -404,7 +421,7 @@ textarea[type="url"]{
 }
 .post-url {
    position: absolute;
-   left: 25%;
+   left: 28%;
    top: 55%;
    font-size: 22px;
    color: blue;
@@ -555,4 +572,38 @@ input[name=avatar] {
    bottom: -110%;
    left: 14%;
    width: 100px;
+}
+
+/* EDIT-POST PAGE */
+.edit-post {
+   position: absolute;
+   top: 45%;
+   left: 51%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+}
+.save-edit {
+   position: absolute;
+   bottom: -15%;
+   left: 48%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+}
+textarea[type=edit-title] {
+   resize: none;
+   width: 400px;
+   margin-bottom: 20px;
+   outline: none;
+}
+textarea[type=edit-description] {
+   margin-left: 1px;
+   resize: none;
+   width: 400px;
+   margin-bottom: 20px;
+   outline: none;
+}
+textarea[type=edit-url] {
+   resize: none;
+   width: 400px;
+   outline: none;
 }
