@@ -3,12 +3,16 @@ require __DIR__.'../../views/header.php';
 require __DIR__.'/../logic/feed.php';
 require __DIR__.'/../logic/comment.php';
 
+$post_id = $_GET['id'];
+$query = "SELECT * FROM posts WHERE post_id = :post_id";
 
+$statement = $pdo->prepare($query);
+$statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+$statement->execute();
 
-foreach($joined as $join){}
+$post = $statement->fetch(PDO::FETCH_ASSOC);
 
-
-   ?>
+?>
 
    <div class="post">
       <div class="post-content">
@@ -30,37 +34,30 @@ foreach($joined as $join){}
 
 
          <div class="post-title">
-            <h2><?php echo $join['title']; ?></h2>
+            <h2><?php echo $post['title']; ?></h2>
          </div>
          <br>
          <div class="post-description">
-            <?php echo $join['description']; ?>
+            <?php echo $post['description']; ?>
          </div>
          <div class="post-url">
-            <a href="<?php echo $join['url']; ?>" class="img-url"><?php echo substr($join['url'], 0, 100); ?></a>
+            <a href="<?php echo $post['url']; ?>" class="img-url"><?php echo substr($post['url'], 0, 100); ?></a>
          </div>
          <div class="post-time">
-            Posted: <?php echo $join['posted']; ?>
+            Posted: <?php echo $post['posted']; ?>
          </div>
 
-
-         <?php if (isset($_SESSION['user']) && $join['username'] === $_SESSION['user']['username']): ?>
-
-            <form method="post" class="votes">
-               <!-- <input type="submit" name="delete_post" value="Delete post" /> -->
-               <br>
-               <?php echo $join['up_vote']; ?><input type="submit" name="up_vote" value="up" />
-               <br>
-               <?php echo $join['down_vote']; ?><input type="submit" name="down_vote" value="down" />
-            </form>
-
-
-
-         <?php endif; ?>
       </div>
    </div>
 
 
    <div class="comments">
       <?php echo $comment['comment']; ?>
+      <br>
+      <form action="../logic/comment.php" method="post">
+         <div>
+            <input type="comment" name="comment">
+         </div>
+         <button type="submit" class="btn">Post comment</button>
+      </form>
    </div>

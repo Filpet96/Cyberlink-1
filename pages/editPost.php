@@ -1,6 +1,6 @@
 <?php
 require __DIR__.'../../views/header.php';
-require __DIR__.'/../logic/feed.php';
+// require __DIR__.'/../logic/editPost.php';
 
 
 $post_id = $_GET['id'];

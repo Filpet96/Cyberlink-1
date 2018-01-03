@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-// require __DIR__.'/../app/autoload.php';
+require __DIR__.'/../app/autoload.php';
 
-// Joining tales: posts & comments
+// Joining tables: posts & comments
 $comment_query = "SELECT * FROM posts LEFT JOIN comments ON posts.post_id=comments.post_id";
 
 $comment_statement = $pdo->query($comment_query);
@@ -17,7 +17,7 @@ if (!$comment_statement) {
 }
 
 foreach($comments as $comment){}
-
+die(var_dump($comment));
 
 // Logic for posting a comment
 if (isset($_POST['comment'])) {
