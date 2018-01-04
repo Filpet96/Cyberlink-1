@@ -15,3 +15,12 @@ if (!function_exists('redirect')) {
     exit;
   }
 }
+
+
+// function countArray(){
+//    $query = "SELECT * FROM comments WHERE post_id = :post_id";
+//    $statement = $pdo->prepare($query);
+//    $statement->bindParam(':post_id', $post_id, PDO::PARAM_STR);
+//    $statement->execute();
+//    $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
+// }

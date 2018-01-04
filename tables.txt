@@ -6,7 +6,8 @@ CREATE TABLE "posts" (
         `url`   VARCHAR NOT NULL,
         `posted`      VARCHAR,
         `up_vote` INTEGER,
-        `down_vote` INTEGER
+        `down_vote` INTEGER,
+        `edited`     VARCHAR
 );
 
 

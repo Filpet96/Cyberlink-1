@@ -1,7 +1,8 @@
+/* GENERAL STYLING */
 * {
    margin: 0px;
    font-family: Montserrat;
-   font-size: 16px;
+   /* font-size: 16px; */
 }
 body {
    color: #404040;
@@ -15,7 +16,10 @@ a {
    font-weight: bold;
 }
 a:hover {
-   color: blue;
+   color: #6666ff;
+}
+h2 {
+   font-size: 20px;
 }
 footer {
    background-color: #404040;
@@ -48,6 +52,12 @@ label {
 }
 .opacity {
    opacity: 0;
+}
+.back-btn{
+   position: absolute;
+   top: 6%;
+   left: .5%;
+   color: blue;
 }
 
 .header-text{
@@ -83,12 +93,44 @@ label {
 /* COMMENTS-PAGE */
 .comments {
    position: absolute;
-   height: 50%;
-   width: 50%;
-   top: 47%;
+   height: 40%;
+   width: 30%;
+   top: 53%;
    left: 25%;
    border: 1px solid grey;
    color: black;
+   background-color: #f2f2f2;
+   font-size: 12px;
+   padding: 10px;
+}
+.comment-form{
+   position: absolute;
+   left: 58%;
+   top: 55%;
+}
+textarea[name=comment]{
+   width: 200px;
+   height: 100px;
+   font-size: 12px;
+   resize: none;
+   outline: none;
+   border: 1px solid grey;
+   color: black;
+   background-color: #f2f2f2;
+}
+.post-btn{
+   font-size: 12px;
+   margin-left: 50px;
+   background-color: #f2f2f2;
+   border-radius: 10px;
+   border-color: grey;
+   cursor: pointer;
+   outline: none;
+}
+.comment-hr{
+   width: 99%;
+   margin-bottom: 10px;
+   margin-top: 10px;
 }
 
 /* LOGIN-PAGE */
@@ -243,29 +285,33 @@ hr {
    top: 45%;
    right: -30%;
 }
-
+.number-comments{
+   position: absolute;
+   top: 13%;
+   right: 5%;
+}
 .comment-btn {
    position: absolute;
-   bottom: 3%;
-   right: 1%;
+   bottom: -90%;
+   right: -2%;
    background-image: url("../img/comment.png");
    background-size: cover;
    background-size: 100%;
    background-color: transparent;
-   height: 30px;
-   width: 30px;
+   height: 20px;
+   width: 20px;
    cursor: pointer;
    border: none;
    opacity: 0.5;
    outline: none;
 }
 textarea[type="comment"] {
-   resize: none;
+   /* resize: none;
    color: black;
    border: 1px solid black;
    width: 200px;
    height: 70px;
-   font-size: 12px;
+   font-size: 12px; */
 }
 textarea[type=title]{
    resize: none;
@@ -352,9 +398,8 @@ textarea[type="url"]{
    position: absolute;
    top: 10%;
    text-align: center;
-   /*left: 1%;*/
    border-right: 1px solid lightgrey;
-   height: 90%;
+   height: 80%;
    width: 150px;
 }
 .side-avatar {
@@ -366,7 +411,7 @@ textarea[type="url"]{
 }
 .member {
    position: absolute;
-   top: 63%;
+   top: 70%;
    left: 30%;
    font-size: 12px;
    color: #404040;
@@ -383,14 +428,34 @@ textarea[type="url"]{
    color: blue;
    margin: 0px;
 }
+.post-header{
+   position: absolute;
+   top: 0%;
+   width: 99.2%;
+   background-color: lightgrey;
+   height: 15px;
+   padding: 3px;
+}
+.post-footer{
+   position: absolute;
+   bottom: 0%;
+   width: 99.2%;
+   background-color: lightgrey;
+   height: 15px;
+   padding: 3px;
+   font-size: 12px;
+   text-align: center;
+}
 .post-id {
    position: absolute;
-   background-color: lightgrey;
-   border: 1px solid grey;
-   width: 99.7%;
-   padding-left: 2px;
+   right: 1%;
+   font-size: 12px;
 
-   color: black;
+}
+.post-time {
+   position: absolute;
+   font-size: 12px;
+
 }
 .avatar {
    position: relative;
@@ -399,19 +464,18 @@ textarea[type="url"]{
 .post {
    position: absolute;
    width: 50%;
-   z-index: -1;
+   /* z-index: -1; */
    left: 25%;
    margin-top: 12px;
    margin-bottom: 100px;
-   background-color: #f2f2f2;
-
 }
 .post-content {
    position: relative;
    height: 300px;
-   border-bottom: 10px solid white;
+   border: 1px solid lightgrey;
    background-color: #f2f2f2;
    padding-right: 20px;
+
 }
 .post-title {
    position: absolute;
@@ -422,31 +486,20 @@ textarea[type="url"]{
 .post-url {
    position: absolute;
    left: 28%;
-   top: 55%;
+   top: 70%;
    font-size: 22px;
    color: blue;
    width: 100px;
-
+   font-size: 18px;
 }
 .post-description {
    position: absolute;
    left: 25%;
    top: 35%;
    margin-left: 20px;
-
+   font-size: 16px;
 }
-.post-time {
-   position: absolute;
-   bottom: 0%;
-   width: 100%;
-   height: 15%;
-   font-family: tahoma;
-   background-color: lightgrey;
-   border: 1px solid grey;
-   font-size: 12px;
-   color: black;
 
-}
 .delete-post {
    position: absolute;
    bottom: 4%;
@@ -468,14 +521,14 @@ textarea[type="url"]{
 }
 .edit-post-btn {
    position: absolute;
-   bottom: 4%;
-   right: 8%;
+   bottom: -85%;
+   right: 2.5%;
    background-image: url("../img/edit.png");
    background-size: cover;
    background-size: 100%;
    background-color: transparent;
-   height: 20px;
-   width: 20px;
+   height: 15px;
+   width: 15px;
    cursor: pointer;
    border: none;
    opacity: 0.5;

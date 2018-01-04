@@ -18,7 +18,9 @@ $post = $statement->fetch(PDO::FETCH_ASSOC);
 
 
 <div class="edit-post">
-   <form action="../logic/editPost.php" method="post">
+   <!-- <form action="../logic/editPost.php" method="post"> -->
+   <form action="../logic/editPost.php?id=<?php echo $post_id?>" method="post">
+
       <div>
          <label type="edit-title">Title</label>
          <br>
