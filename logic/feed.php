@@ -20,49 +20,39 @@ foreach($session as $id){}
    foreach($joined as $join){}
 
 
+   // Query for fetching votes and printing in every post
+   // $post_id = $join['post_id'];
+   $post_id = 1;
+   $user_id = 2;
+   // $query = "SELECT * FROM votes WHERE post_id = :post_id";
+   $query = 'SELECT COUNT(*) FROM votes WHERE post_id = :post_id';
+   // $query = 'SELECT COUNT(*) FROM votes WHERE post_id = :post_id, vote = :vote';
+   $statement = $pdo->prepare($query);
+   $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+   $statement->execute();
+   $votes = $statement->fetchAll(PDO::FETCH_ASSOC);
+   print_r($votes);
+
+//    foreach($votes as $vote){
+// echo $vote);
+//    }
+
+   // $row = mysql_fetch_assoc($votes);
+   // $count = $row['count'];
+   // echo $count;
 
 
-      // Delete logic
-      if( isset( $_REQUEST['delete_post'] )){
-         $delete_query = 'DELETE FROM posts
-         WHERE post_id=4';
-         $delete_statement = $pdo->query($delete_query);
-         $delete_statement->execute();
 
-         if (!$delete_statement) {
-            die(var_dump($pdo->errorInfo()));
-         }
+
+
+   // Delete logic
+   if( isset( $_REQUEST['delete_post'] )){
+      $delete_query = 'DELETE FROM posts
+      WHERE post_id=4';
+      $delete_statement = $pdo->query($delete_query);
+      $delete_statement->execute();
+
+      if (!$delete_statement) {
+         die(var_dump($pdo->errorInfo()));
       }
-
-      // // Function for voting a post
-      //       if(isset($_POST['up_vote'])) {
-      //       $up_vote = 1;
-      //
-      //       // $post_id = $join['post_id'];
-      //       $post_id = $_GET['id'];
-      //
-      //
-      //       $query = 'UPDATE posts
-      //                 SET up_vote = :up_vote + 30
-      //                 WHERE post_id = :post_id';
-      //
-      //       $statement = $pdo->prepare($query);
-      //       $statement->bindParam(':up_vote', $up_vote, PDO::PARAM_INT);
-      //       $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
-      //       $statement->execute();
-      // }
-      //
-      //    if(isset($_POST['down_vote'])) {
-      //          $down_vote = 0;
-      //
-      //          $post_id = $join['post_id'];
-      //
-      //          $query = 'UPDATE posts
-      //                    SET down_vote = :down_vote + 1
-      //                    WHERE post_id = :post_id';
-      //
-      //          $statement = $pdo->prepare($query);
-      //          $statement->bindParam(':down_vote', $down_vote, PDO::PARAM_INT);
-      //          $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
-      //          $statement->execute();
-      //    }
+   }

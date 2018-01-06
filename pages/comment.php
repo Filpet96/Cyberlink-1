@@ -25,16 +25,17 @@ $statement = $pdo->prepare($query);
 $statement->bindParam(':post_id', $post_id, PDO::PARAM_STR);
 $statement->execute();
 $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 foreach($comments as $comment){}
 
 // // Fetching user for comment info
-$user_id = $comment['id'];
-$query = "SELECT * FROM users WHERE id = :user_id";
-$statement = $pdo->prepare($query);
-$statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
-$statement->execute();
-$comment_user = $statement->fetch(PDO::FETCH_ASSOC);
-foreach($comment_user as $comment_us){}
+// $user_id = $comment['id'];
+// $query = "SELECT * FROM users WHERE id = :user_id";
+// $statement = $pdo->prepare($query);
+// $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+// $statement->execute();
+// $comment_user = $statement->fetch(PDO::FETCH_ASSOC);
+// foreach($comment_user as $comment_us){}
 
 ?>
    <a href="feed.php" class="back-btn">Bakåt änna</a>

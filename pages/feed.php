@@ -2,6 +2,8 @@
 require __DIR__.'../../views/header.php';
 require __DIR__.'/../logic/feed.php';
 require __DIR__.'/../app/functions.php';
+// require __DIR__.'/../logic/votes.php';
+
 
 
    // Function for counting and printing the amount comments
@@ -18,18 +20,21 @@ require __DIR__.'/../app/functions.php';
    //    echo (int)$numb;
    // }
 
-   // // Function for voting a post
-         if(isset($_POST['up_vote'])) {
-         $up_vote = 0;
 
+   // Function for voting a post
+         if(isset($_POST['up_vote'])) {
+         $up_vote = 1;
          $post_id = $_GET['id'];
+         // $post_id = $join['post_id'];
          $id = (int)$_SESSION['user']['id'];
 
+         // $query = 'UPDATE votes
+         //           SET id = :id, post_id = :post_id, vote = :up_vote + 5
+         //           WHERE post_id = 1';
 
+       $query = 'INSERT INTO votes (id, post_id, vote)
+                 VALUES (:id, :post_id, :up_vote)';
 
-         $query = 'UPDATE votes
-                   SET votes = :up_vote + 1, id = :id, post_id = :post_id
-                   WHERE post_id = :post_id';
 
          $statement = $pdo->prepare($query);
 
@@ -37,28 +42,28 @@ require __DIR__.'/../app/functions.php';
            die(var_dump($pdo->errorInfo()));
          }
 
-         $statement->bindParam(':up_vote', $up_vote, PDO::PARAM_INT);
-         $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
          $statement->bindParam(':id', $id, PDO::PARAM_INT);
+         $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+         $statement->bindParam(':up_vote', $up_vote, PDO::PARAM_INT);
 
          $statement->execute();
    }
 
          if(isset($_POST['down_vote'])) {
-         $down_vote = 0;
+         $down_vote = 5;
          $post_id = $_GET['id'];
+         // $post_id = $join['post_id'];
+         $id = (int)$_SESSION['user']['id'];
 
+         $query = 'INSERT INTO votes (id, post_id, vote)
+                  VALUES (:id, :post_id, :down_vote)';
 
-         $query = 'UPDATE posts
-                   SET down_vote = :down_vote + 1
-                   WHERE post_id = :post_id';
-
-         $statement = $pdo->prepare($query);
-         $statement->bindParam(':down_vote', $down_vote, PDO::PARAM_INT);
+         $statement->bindParam(':id', $id, PDO::PARAM_INT);
          $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+         $statement->bindParam(':down_vote', $down_vote, PDO::PARAM_INT);
+
          $statement->execute();
       }
-
 
 ?>
 
@@ -102,9 +107,8 @@ require __DIR__.'/../app/functions.php';
 
             <!-- Form for voting a post -->
             <form action="../pages/feed.php?id=<?php echo $join['post_id']?>" method="post" class="votes">
-            <!-- <form action="../pages/feed.php" method="post" class="votes"> -->
                <br>
-               <?php echo $join['up_vote']; ?><input type="submit" name="up_vote" value="up" />
+               <?php echo $vote; ?><input type="submit" name="up_vote" value="up" />
                <br>
                <?php echo $join['down_vote']; ?><input type="submit" name="down_vote" value="down" />
             </form>

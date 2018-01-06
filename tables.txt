@@ -31,9 +31,9 @@ CREATE TABLE "comments" (
          `posted`       VARCHAR
 );
 
+
 CREATE TABLE "votes" (
-         `id`      INTEGER NOT NULL,
-         `vote_id`      INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-         `post_id`      INTEGER NOT NULL,
-         `votes`      INTEGER NOT NULL      
+         `id`      INTEGER,
+         `post_id`      INTEGER,
+         `vote`      INTEGER
 );
