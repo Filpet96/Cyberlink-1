@@ -24,6 +24,8 @@ if (isset($_POST['biography'], $_POST['email'])) {
 
   $statement->execute();
 
+  redirect('../../pages/feed.php');
+
 };
 
 // Logic for editing user password
@@ -47,6 +49,7 @@ if (isset($_POST['password'])) {
 
   $statement->execute();
 
+  redirect('../../pages/feed.php');
 
 };
 

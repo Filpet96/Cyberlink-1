@@ -10,15 +10,18 @@ require __DIR__.'../../views/header.php';
    <div class="create-post">
       <form action="../logic/createPost.php" method="post">
          <div>
-            <input type="title" name="title" placeholder="Title" required>
+            <label for="create-post">Title</label>
+            <input type="create-post" name="title" required>
          </div>
          <div>
-            <textarea name="description" placeholder="Describe the link.." required></textarea>
+            <label for="create-post">Description</label>
+            <textarea name="description" required></textarea>
          </div>
          <div>
-            <input type="url" name="url" placeholder="Url" required>
+            <label for="create-post">Link</label>
+            <input type="create-post" name="url" required>
          </div>
-         <button type="submit" class="btn" id="create-post">Post</button>
+         <button type="submit" class="post-btn btn">Post</button>
       </form>
    </div>
 <?php endif; ?>

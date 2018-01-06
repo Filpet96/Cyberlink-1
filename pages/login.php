@@ -4,16 +4,16 @@
 <p class="header-text">Login</p>
 
 <div class="login-wrapper">
-   <form action="../logic/login.php" method="post">
+   <form action="../logic/login.php" method="post" class="login-form">
 
-      <div class="form-group">
-         <label for="email">Username</label>
+      <div>
+         <label for="login-username">Username</label>
          <br>
-         <input type="login" name="username" placeholder="Username" required>
+         <input type="username" name="username" placeholder="Username" required>
       </div>
 
-      <div class="form-group">
-         <label for="password">Password</label>
+      <div>
+         <label for="login-password">Password</label>
          <br>
          <input type="password" name="password" placeholder="**********" required>
       </div>

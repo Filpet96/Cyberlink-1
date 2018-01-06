@@ -25,6 +25,9 @@ foreach($id as $person){}
 
        move_uploaded_file($_FILES['avatar']['tmp_name'], __DIR__.'/../uploads/'.$newname);
 
+       // redirect('../pages/profile.php');
+
+
      }
 
 ?>
@@ -42,7 +45,8 @@ foreach($id as $person){}
          <div class="profile-bio"><b>Biography: </b><?php echo $user['biography']; ?></div>
          <div class="profile-password"><b>Password: **********</b></div>
 
-         <a href="editProfile.php" class="edit"></a>
+         <!-- <a href="editProfile.php" class="edit">Edit</a> -->
+         <a href="editProfile.php" class="edit">Edit</a>
 
          <form action="../pages/profile.php" name="avatar" method="post" enctype="multipart/form-data">
             <input type="file" name="avatar" required>

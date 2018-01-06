@@ -11,7 +11,6 @@ require __DIR__.'/../app/autoload.php';
 // $comment_statement = $pdo->query($comment_query);
 // $comment_statement->execute();
 // $user_comments = $comment_statement->fetchAll(PDO::FETCH_ASSOC);
-// // die(var_dump($user_comments));
 // foreach($user_comments as $user_comment){}
 
 
