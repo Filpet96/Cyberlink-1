@@ -28,10 +28,6 @@ require __DIR__.'/../app/functions.php';
          // $post_id = $join['post_id'];
          $id = (int)$_SESSION['user']['id'];
 
-         // $query = 'UPDATE votes
-         //           SET id = :id, post_id = :post_id, vote = :up_vote + 5
-         //           WHERE post_id = 1';
-
        $query = 'INSERT INTO votes (id, post_id, vote)
                  VALUES (:id, :post_id, :up_vote)';
 
@@ -64,6 +60,7 @@ require __DIR__.'/../app/functions.php';
 
          $statement->execute();
       }
+      
 
 ?>
 
@@ -108,9 +105,9 @@ require __DIR__.'/../app/functions.php';
             <!-- Form for voting a post -->
             <form action="../pages/feed.php?id=<?php echo $join['post_id']?>" method="post" class="votes">
                <br>
-               <?php echo $vote; ?><input type="submit" name="up_vote" value="up" />
-               <br>
-               <?php echo $join['down_vote']; ?><input type="submit" name="down_vote" value="down" />
+               <input type="submit" name="up_vote" value="" />
+               <h3><?php echo count($votes); ?></h3>
+               <input type="submit" name="down_vote" value="" />
             </form>
 
 

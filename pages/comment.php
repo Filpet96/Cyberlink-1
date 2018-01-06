@@ -32,10 +32,24 @@ foreach($comments as $comment){}
 // $user_id = $comment['id'];
 // $query = "SELECT * FROM users WHERE id = :user_id";
 // $statement = $pdo->prepare($query);
+// if (!$statement) {
+//    die(var_dump($pdo->errorInfo()));
+// }
 // $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
 // $statement->execute();
-// $comment_user = $statement->fetch(PDO::FETCH_ASSOC);
+// $comment_user = $statement->fetchAll(PDO::FETCH_ASSOC);
 // foreach($comment_user as $comment_us){}
+
+// Joining tables: users & comments
+$query = "SELECT * FROM users LEFT JOIN comments ON users.id=comments.id";
+$statement = $pdo->query($query);
+$statement->execute();
+$comment_users = $statement->fetchAll(PDO::FETCH_ASSOC);
+if (!$statement) {
+   die(var_dump($pdo->errorInfo()));
+}
+// die(var_dump($comment_users));
+// foreach($comment_users as $comment_user){}
 
 ?>
    <a href="feed.php" class="back-btn">Bakåt änna</a>
@@ -84,9 +98,12 @@ foreach($comments as $comment){}
 
 
    <div class="comments">
-      <?php foreach($comments as $comment): ?>
-         <div><strong><?php echo $comment['id']; ?>: </strong><?php echo $comment['comment']; ?></div>
-         <hr class="comment-hr">
+      <?php foreach($comment_users as $comment_user): ?>
+         <?php if($comment_user['post_id'] === $_GET['id']): ?>
+            <div><strong><?php echo $comment_user['username']; ?>: </strong><?php echo $comment_user['comment']; ?></div>
+            <div class="timestamp"><?php echo $comment_user['posted']; ?></h6></div>
+            <hr class="comment-hr">
+         <?php endif; ?>
       <?php endforeach; ?>
    </div>
 
