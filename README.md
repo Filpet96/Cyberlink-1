@@ -1,4 +1,6 @@
 # Cyberlink
+![GitHub Logo](/img/gif.gif)
+
 
 ## The assignment:
 The assignment is to create a Reddit clone.
