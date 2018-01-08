@@ -49,26 +49,7 @@ require __DIR__.'/../app/functions.php';
 
 <div class="post">
    <?php foreach($joined as $join): ?>
-      <div class="post-content">
-         <!-- <div class="post-header">
-            <div class="post-id">
-               # <?php echo $join['post_id']; ?>
-            </div>
-            <div class="post-time">
-               <?php echo $join['posted']; ?>
-            </div>
-         </div> -->
-
-         <!-- <div class="side-info">
-            <h5><?php echo $join['username']; ?></h5>
-            <br>
-            <?php echo '<img src="../uploads/'. $join['img']. '" class="avatar-img">'; ?>
-            <br>
-            <div class="member">Joined: <br>
-               <?php echo $join['joined']; ?>
-            </div>
-         </div> -->
-
+      <div class="post-feed">
 
          <!-- Form for voting a post -->
          <form action="../pages/feed.php?id=<?php echo $join['post_id']?>" method="post" class="votes">
@@ -81,20 +62,9 @@ require __DIR__.'/../app/functions.php';
          </form>
 
 
-         <a href="comment.php?id=<?php echo $join['title'] ?>" class="title"><?php echo $join['title']; ?></a>
-
-
-         <!-- <a href="<?php echo $join['url']; ?>" target="_blank" class="img-url"><?php echo substr($join['url'], 0, 60); ?></a> -->
-         <br>
-         <div class="post-footer">
-            Posted by: <strong><?php echo $join['username']; ?></strong>, <?php echo $join['posted']; ?>
-            <br>
-            <a href="" class="comments"><?php echo $count_comments; ?> comments</a>
-         </div>
-
-
-
-
+            <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="title"><?php echo $join['title']; ?></a>
+            <p class="posted">Posted by: <strong><?php echo $join['username']; ?></strong>, <?php echo $join['posted']; ?></p>
+            <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="comment-btn"><?php echo "100"; ?> comments</a>
 
 
             <!-- Footer for every post, displaying when edited, buttons for comment and edit -->
@@ -105,6 +75,7 @@ require __DIR__.'/../app/functions.php';
             <?php endif; ?>-->
       </div>
       <hr>
+      <br>
    <?php endforeach; ?>
 </div>
 

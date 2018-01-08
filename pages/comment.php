@@ -20,51 +20,24 @@ $statement->execute();
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
 ?>
-   <a href="feed.php" class="back-btn">Bakåt änna</a>
 
-   <div class="post">
-      <div class="post-content">
-         <div class="post-header">
-            <div class="post-id">
-               # <?php echo $post['post_id']; ?>
-            </div>
-            <div class="post-time">
-               <?php echo $post['posted']; ?>
-            </div>
-         </div>
-         <br>
+   <div class="comment-page">
+            <div class="post-title"><?php echo $post['title']; ?></a></div>
+            <div class="post-description"><?php echo $post['description']; ?></div>
+            <div class="post-url"><?php echo $post['url']; ?></div>
 
-         <div class="side-info">
-            <h5><?php echo $user['username']; ?></h5>
             <br>
-            <!-- <?php echo '<img src="../uploads/'. $user['img']. '" class="avatar-img">'; ?> -->
-            <br>
-            <!-- <div class="member">Joined: <br>
-               <?php echo $user['joined']; ?>
-            </div> -->
-         </div>
-
-
-
-         <div class="post-title">
-            <h2><?php echo $post['title']; ?></h2>
-         </div>
-         <br>
-         <div class="post-description">
-            <?php echo $post['description']; ?>
-         </div>
-         <div class="post-url">
-            <a href="<?php echo $post['url']; ?>" class="img-url"><?php echo substr($post['url'], 0, 100); ?></a>
-         </div>
 
          <div class="post-footer">
             <?php echo 'Last edited: '. $join['edited']; ?>
-         <?php if (isset($_SESSION['user']) && $join['username'] === $_SESSION['user']['username']): ?>
-            <a href="editPost.php?id=<?php echo $join['post_id'] ?>" class="edit-post-btn"></a>
-         <?php endif; ?>
+            <br>
+            <br>
+            Posted by: <strong><?php echo $user['username']; ?></strong>, <?php echo $post['posted']; ?>
          </div>
-
       </div>
+      <?php if (isset($_SESSION['user']) && $join['username'] === $_SESSION['user']['username']): ?>
+         <a href="editPost.php?id=<?php echo $join['post_id'] ?>" class="edit-post-btn"></a>
+      <?php endif; ?>
    </div>
 
 
