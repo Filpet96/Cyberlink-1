@@ -1,0 +1,756 @@
+/* GENERAL STYLING */
+* {
+   margin: 0px;
+   font-family: Montserrat;
+   /* font-size: 16px; */
+}
+body {
+   color: #404040;
+   background-color: white;
+   /* background-image: url("../img/1.gif"); */
+   background-size: cover;
+   /* background-repeat: no-repeat; */
+	background-attachment: fixed;
+}
+a {
+   text-decoration: none;
+   outline: none;
+   margin: 20px;
+   color: white;
+   font-weight: bold;
+}
+a:hover {
+   color: #6666ff;
+}
+h2 {
+   font-size: 20px;
+}
+h3{
+   margin-left: 10px;
+   margin-left: 10px;
+   font-size: 16px;
+   opacity: .7;
+}
+h5{
+   font-size: 18px;
+   margin-top: 10px;
+   margin-bottom: -20px;
+}
+.timestamp{
+   font-style: italic;
+   font-size: 10px;
+   margin-top: 5px;
+}
+footer {
+   background-color: #404040;
+   color: white;
+   position: fixed;
+   bottom: 0%;
+   height: 2%;
+   width: 100%;
+   padding: 10px;
+   /* padding-top: 20px; */
+   text-align: center;
+   font-size: 12px;
+}
+label {
+
+}
+.btn {
+   border: 1px solid lightgrey;
+   color: black;
+   outline: none;
+   cursor: pointer;
+   font-size: 18px;
+   background-color: #f2f2f2;
+   border-radius: 7px;
+}
+.z-index {
+   z-index: 1;
+}
+.x-index {
+   z-index: -1;
+}
+.opacity {
+   opacity: 0;
+}
+.back-btn{
+   position: absolute;
+   top: 6%;
+   left: .5%;
+   color: blue;
+}
+
+.header-text{
+   font-size: 32px;
+   position: fixed;
+   top: 10%;
+   left: 2%;
+}
+
+/* NAVBAR */
+.nav-wrapper {
+   position: fixed;
+   background-color: #404040;
+   color: white;
+   width: 100%;
+   height: 35px;
+   padding-top: 15px;
+   font-size: 18px;
+   z-index: 1;
+}
+.navbar-left {
+   float: left;
+}
+.navbar-right {
+   float: right;
+}
+
+/* HOME-PAGE */
+.home-wrapper {
+   position: absolute;
+   top: 20%;
+}
+
+/* COMMENTS-PAGE */
+.comments {
+   position: absolute;
+   height: 40%;
+   width: 30%;
+   top: 53%;
+   left: 25%;
+   border: 1px solid lightgrey;
+   color: black;
+   background-color: #f2f2f2;
+   font-size: 12px;
+   padding: 10px;
+}
+.comment-form{
+   position: absolute;
+   left: 58%;
+   top: 53%;
+}
+.post-comment{
+   border-color: grey;
+   font-size: 14px;
+   margin-top: 5px;
+}
+textarea[name=comment]{
+   width: 238.3px;
+   height: 70px;
+   font-size: 12px;
+   resize: none;
+   outline: none;
+   border: 1px solid lightgrey;
+   color: black;
+   background-color: #f2f2f2;
+}
+.post-btn{
+   font-size: 12px;
+   margin-top: 5px;
+   background-color: #f2f2f2;
+   border-radius: 10px;
+   border-color: grey;
+   cursor: pointer;
+   outline: none;
+}
+.comment-hr{
+   width: 99%;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   background-color: lightgrey;
+}
+.maxchar {
+   font-size: 14px;
+   float: center;
+}
+
+/* LOGIN-PAGE */
+h6 {
+   position: absolute;
+   bottom: 10%;
+   left: 35%;
+}
+.register-link {
+   color: #404040;
+   margin: 0px;
+   text-decoration: underline;
+}
+.login-wrapper {
+   position: absolute;
+   top: 20%;
+   left: 32%;
+   height: 220px;
+   width: 500px;
+   border: 1px solid grey;
+   background-color: #f2f2f2;
+}
+.login-form{
+   margin-left: 96px;
+   margin-top: 25px;
+}
+.form-group {
+   text-align: center;
+   margin: 20px;
+}
+input[type=username] {
+   width: 300px;
+   height: 20px;
+   font-size: 12px;
+}
+input[type=password] {
+   width: 300px;
+   height: 20px;
+   font-size: 12px;
+}
+label[for=login-password], label[for=login-username]{
+position: absolute;
+left: 42%;
+
+}
+.login-btn {
+   position: absolute;
+   left: 40%;
+   margin-top: 20px;
+   font-size: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+   background-color: white;
+}
+
+/* REGISTER-PAGE */
+textarea {
+   border: 1px solid lightgrey;
+   color: grey;
+
+}
+.register-wrapper {
+   position: absolute;
+   top: 10%;
+   left: 32%;
+   height: 540px;
+   width: 500px;
+   border: 1px solid grey;
+   background-color: #f2f2f2;
+   padding: 10px;
+}
+.register-btn {
+   position: absolute;
+   left: 36%;
+   bottom: 5%;
+   background-color: white;
+}
+input[type=file] {
+   border: 1px solid lightgrey;
+   margin-left: 37px;
+   width: 400px;
+}
+input[type=text] {
+   width: 400px;
+   margin: 10px;
+   outline: none;
+   height: 25px;
+   font-size: 14px;
+   padding-left: 10px;
+   margin-left: 40px;
+}
+textarea[type=email] {
+   width: 400px;
+   height: 25px;
+   margin: 10px;
+   outline: none;
+   margin-left: 46px;
+   resize: none;
+   font-size: 16px;
+}
+textarea[type=password] {
+   width: 400px;
+   height: 25px;
+   margin: 10px;
+   outline: none;
+   margin-left: 15px;
+   resize: none;
+   font-size: 16px;
+}
+label[for=text]{
+   float: left;
+   margin-left: 43px;
+}
+textarea[type=biography] {
+   margin-left: 43px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   width: 400px;
+   height: 150px;
+   resize: none;
+   border-color: lightgrey;
+   outline: none;
+   font-size: 16px;
+}
+
+/* CREATE-POST */
+.create-post {
+   position: absolute;
+   top: 45%;
+   left: 50%;
+   width: 600px;
+   height: 400px;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+   border: 1px solid grey;
+   background-color: #f2f2f2;
+}
+.post-btn{
+   margin-top: 20px;
+   margin-left: 270px;
+   padding-left: 20px;
+   padding-right: 20px;
+   font-size: 16px;
+}
+label[for=create-post] {
+   float: left;
+   margin-top: 20px;
+   margin-left: 40px;
+}
+input[type=create-post]{
+   width: 400px;
+   margin: 10px;
+   outline: none;
+   height: 25px;
+   font-size: 14px;
+   margin-left: 68px;
+}
+input[type=title] {
+   width: 400px;
+   margin: 10px;
+   outline: none;
+}
+input[type=url] {
+   width: 400px;
+   margin: 10px;
+   outline: none;
+}
+textarea[name=description] {
+   width: 400px;
+   height: 200px;
+   margin: 10px;
+   resize: none;
+   border: 1px solid lightgrey;
+   outline: none;
+   font-size: 16px;
+   color: black;
+}
+
+/* FEED-PAGE*/
+hr {
+   width: 100%;
+   margin-bottom: 0px;
+   color: white;
+}
+.votes {
+   position: absolute;
+   top: 30%;
+   right: 3%;
+}
+.comment {
+   position: absolute;
+   top: 45%;
+   right: -30%;
+}
+input[name=up_vote]{
+   background-image: url("../img/up.png");
+   background-size: cover;
+   border: none;
+   background-color: transparent;
+   opacity: .5;
+   height: 30px;
+   width: 30px;
+   cursor: pointer;
+}
+input[name=down_vote]{
+   background-image: url("../img/down.png");
+   background-size: cover;
+   border: none;
+   background-color: transparent;
+   opacity: .5;
+   height: 30px;
+   width: 30px;
+   cursor: pointer;
+}
+.number-comments{
+   position: absolute;
+   top: 13%;
+
+   right: 5%;
+}
+.comment-btn {
+   position: absolute;
+   bottom: -65%;
+   right: -2%;
+   background-image: url("../img/comment.png");
+   background-size: cover;
+   background-size: 100%;
+   background-color: transparent;
+   height: 20px;
+   width: 20px;
+   cursor: pointer;
+   border: none;
+   opacity: 0.5;
+   outline: none;
+}
+textarea[type="comment"] {
+   /* resize: none;
+   color: black;
+   border: 1px solid black;
+   width: 200px;
+   height: 70px;
+   font-size: 12px; */
+}
+textarea[type=title]{
+   resize: none;
+   color: black;
+   border: 1px solid black;
+   padding: 5px;
+   height: 30px;
+   width: 80%;
+   margin-top: -30px;
+   margin-left: 35px;
+}
+textarea[type=description]{
+   resize: none;
+   color: black;
+   border: 1px solid black;
+   padding: 5px;
+   height: 100px;
+   width: 80%;
+   margin-top: -2px;
+   margin-left: 35px;
+}
+textarea[type="url"]{
+   resize: none;
+   color: black;
+   border: 1px solid black;
+   padding: 5px;
+   height: 50px;
+   width: 80%;
+   margin-top: -12px;
+   margin-left: 35px;
+}
+
+.edit-title {
+   position: absolute;
+   width: 450px;
+   height: 40px;
+   background-color: white;
+   margin-top: -30px;
+   resize: none;
+   color: black;
+   border: 1px solid lightgrey;
+   padding: 5px;
+}
+.edit-description {
+   position: absolute;
+   width: 450px;
+   height: 100px;
+   background-color: white;
+   margin-top: -52px;
+   resize: none;
+   color: black;
+   border: 1px solid lightgrey;
+   padding: 5px;
+}
+.edit-url {
+   position: absolute;
+   width: 450px;
+   height: 50px;
+   background-color: white;
+   margin-left: 20px;
+   margin-top: -15px;
+   resize: none;
+   color: black;
+   border: 1px solid lightgrey;
+   padding: 5px;
+}
+.save-changes {
+   position: absolute;
+   top: 100%;
+   left: 36%;
+   background-color: white;
+   border-radius: 5px;
+   border: 1px solid black;
+   outline: none;
+   cursor: pointer;
+}
+
+.avatar-img {
+   width: 100px;
+   height: 120px;
+   margin-top: 20px;
+}
+.side-info {
+   position: absolute;
+   top: 10%;
+   text-align: center;
+   border-right: 1px solid lightgrey;
+   height: 80%;
+   width: 150px;
+}
+.side-avatar {
+   position: absolute;
+   left: 1.5%;
+   top: 1.5%;
+   width: 155px;
+   height: 195px;
+}
+.member {
+   position: absolute;
+   top: 78%;
+   left: 30%;
+   font-size: 12px;
+   color: #404040;
+}
+.user {
+   color: red;
+   margin: 0px;
+}
+.feed-wrapper {
+   position: absolute;
+   top: 20%;
+}
+.img-url {
+   color: blue;
+   margin: 0px;
+}
+.post-header{
+   position: absolute;
+   top: 0%;
+   width: 99.2%;
+   background-color: lightgrey;
+   height: 15px;
+   padding: 3px;
+}
+.post-footer{
+   position: absolute;
+   bottom: 0%;
+   width: 99.2%;
+   background-color: lightgrey;
+   height: 20px;
+   padding: 3px;
+   font-size: 12px;
+   text-align: center;
+}
+.post-id {
+   position: absolute;
+   right: 1%;
+   font-size: 12px;
+
+}
+.post-time {
+   position: absolute;
+   font-size: 12px;
+
+}
+.avatar {
+   position: relative;
+   left: 1%;
+}
+.post {
+   position: absolute;
+   width: 50%;
+   top: 9%;
+   /* z-index: -1; */
+   left: 25%;
+   margin-bottom: 100px;
+}
+.post-content {
+   position: relative;
+   height: 300px;
+   border: 1px solid lightgrey;
+   background-color: #f2f2f2;
+   padding-right: 20px;
+
+}
+.post-title {
+   position: absolute;
+   left: 25%;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+.post-url {
+   position: absolute;
+   left: 28%;
+   top: 70%;
+   font-size: 22px;
+   color: blue;
+   width: 100px;
+   font-size: 18px;
+}
+.post-description {
+   position: absolute;
+   left: 25%;
+   top: 35%;
+   margin-left: 20px;
+   font-size: 16px;
+}
+
+.delete-post {
+   position: absolute;
+   bottom: 4%;
+   right: 12%;
+   background-image: url("../img/delete.png");
+   background-size: cover;
+   background-size: 100%;
+   background-color: transparent;
+   height: 20px;
+   width: 20px;
+   cursor: pointer;
+   border: none;
+   opacity: 0.5;
+   outline: none;
+}
+#delete {
+   position: absolute;
+   right: 5%;
+}
+.edit-post-btn {
+   position: absolute;
+   bottom: -60%;
+   right: 2.5%;
+   background-image: url("../img/edit.png");
+   background-size: cover;
+   background-size: 100%;
+   background-color: transparent;
+   height: 15px;
+   width: 15px;
+   cursor: pointer;
+   border: none;
+   opacity: 0.5;
+   outline: none;
+}
+/* PROFILE-PAGE */
+.profile-wrapper {
+   position: absolute;
+   left: 15%;
+   top: 11%;
+   height: 400px;
+   width: 1000px;
+   border: 2px solid grey;
+}
+.profile-avatar {
+   position: absolute;
+   top: 2.5%;
+   left: 1%;
+   /*background-image:    url("../img/Hank.jpg");*/
+   background-size: cover;
+   background-size: 100%;
+   width: 160px;
+   height: 200px;
+   border: 1px solid #404040;
+}
+img {
+   width: 158px;
+   height: 198px;
+
+}
+.profile-username {
+   position: absolute;
+   left: 30%;
+   top: 5%;
+}
+.profile-name {
+   position: absolute;
+   left: 30%;
+   top: 20%;
+}
+.profile-bio {
+   position: absolute;
+   left: 30%;
+   top: 50%;
+}
+.profile-email {
+   position: absolute;
+   left: 30%;
+   top: 35%;
+}
+.profile-password {
+   position: absolute;
+   left: 30%;
+   top: 80%;
+}
+
+.edit {
+   background-color: #f2f2f2;
+   border: 1px solid grey;
+   border-radius: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+   font-size: 22px;
+   position: absolute;
+   bottom: 3%;
+   right: 1%;
+   cursor: pointer;
+   outline: none;
+   color: black;
+   text-decoration: none;
+}
+
+.profile-password {
+   position: absolute;
+   left: 30%;
+}
+.change-avatar {
+   position: absolute;
+   top: 83%;
+   left: 6.5%;
+   border: 2px solid #404040;
+   cursor: pointer;
+   outline: none;
+}
+form[name=avatar] {
+   position: absolute;
+   top: 60%;
+   left: -3%;
+}
+input[name=avatar] {
+   width: 220px;
+}
+.upload-avatar {
+   position: absolute;
+   bottom: -110%;
+   left: 14%;
+   width: 100px;
+}
+
+/* EDIT-POST PAGE */
+.edit-post {
+   position: absolute;
+   top: 45%;
+   left: 51%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+}
+.save-edit {
+   position: absolute;
+   bottom: -15%;
+   left: 48%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+}
+textarea[type=edit-title] {
+   resize: none;
+   width: 400px;
+   margin-bottom: 20px;
+   outline: none;
+}
+textarea[type=edit-description] {
+   margin-left: 1px;
+   resize: none;
+   width: 400px;
+   margin-bottom: 20px;
+   outline: none;
+}
+textarea[type=edit-url] {
+   resize: none;
+   width: 400px;
+   outline: none;
+}
