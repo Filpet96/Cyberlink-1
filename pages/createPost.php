@@ -11,11 +11,11 @@ require __DIR__.'../../views/header.php';
       <form action="../logic/createPost.php" method="post">
          <div>
             <label for="create-post">Title</label>
-            <input type="create-post" name="title" required>
+            <input type="create-post" name="title" maxlength="100" required>
          </div>
          <div>
             <label for="create-post">Description</label>
-            <textarea name="description" required></textarea>
+            <textarea name="description" maxlength="150" required></textarea>
          </div>
          <div>
             <label for="create-post">Link</label>

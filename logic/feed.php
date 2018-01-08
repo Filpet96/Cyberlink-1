@@ -15,6 +15,17 @@ foreach($session as $id){}
    }
    foreach($joined as $join){}
 
+   // Joining tables: comments & posts
+   $query = "SELECT * FROM comments LEFT JOIN posts ON comments.id=posts.id";
+   $statement = $pdo->query($query);
+   $statement->execute();
+   $count_comments = $statement->fetchAll(PDO::FETCH_ASSOC);
+   if (!$statement) {
+      die(var_dump($pdo->errorInfo()));
+   }
+   // die(var_dump($count_comments));
+   foreach($joined as $join){}
+
 
    // Query for fetching votes and printing in every post
    $post_id = $join['post_id'];
@@ -29,14 +40,9 @@ foreach($session as $id){}
    // foreach($votes as $vote){}
 
 
-   // Delete logic
-   // if( isset( $_REQUEST['delete_post'] )){
-   //    $delete_query = 'DELETE FROM posts
-   //    WHERE post_id=4';
-   //    $delete_statement = $pdo->query($delete_query);
-   //    $delete_statement->execute();
-   //
-   //    if (!$delete_statement) {
-   //       die(var_dump($pdo->errorInfo()));
-   //    }
-   // }
+   // Fetching comments to count array
+   $post_id = $join['post_id'];
+   $query = 'SELECT * FROM comments WHERE post_id = :post_id';
+   $statement = $pdo->query($query);
+   $statement->execute();
+   $count_comments = $statement->fetchAll(PDO::FETCH_ASSOC);

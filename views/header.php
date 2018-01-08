@@ -14,8 +14,9 @@ require __DIR__.'/../app/autoload.php';
    <!-- <meta http-equiv="refresh" content="30"> -->
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700,900" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="/assets/styles/activity-feed.css"> -->
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/media.css">
+
 </head>
 <body>
     <?php require __DIR__.'/navigation.php'; ?>

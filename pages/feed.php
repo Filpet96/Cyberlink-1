@@ -2,23 +2,6 @@
 require __DIR__.'../../views/header.php';
 require __DIR__.'/../logic/feed.php';
 require __DIR__.'/../app/functions.php';
-// require __DIR__.'/../logic/votes.php';
-
-
-
-   // Function for counting and printing the amount comments
-   // $query = "SELECT COUNT(*) FROM comments WHERE post_id = 1";
-   // $statement = $pdo->prepare($query);
-   // if (!$statement) {
-   //    die(var_dump($pdo->errorInfo()));
-   // }
-   // // $statement->bindParam(':postId', $join['post_id'], PDO::PARAM_STR);
-   // $statement->execute();
-   // $numbers = $statement->fetchAll(PDO::FETCH_ASSOC);
-   //
-   // foreach($numbers as $numb){
-   //    echo (int)$numb;
-   // }
 
 
    // Function for voting a post
@@ -60,26 +43,23 @@ require __DIR__.'/../app/functions.php';
 
          $statement->execute();
       }
-      
+
 
 ?>
 
 <div class="post">
    <?php foreach($joined as $join): ?>
       <div class="post-content">
-         <div class="post-header">
+         <!-- <div class="post-header">
             <div class="post-id">
                # <?php echo $join['post_id']; ?>
             </div>
             <div class="post-time">
                <?php echo $join['posted']; ?>
             </div>
-         </div>
+         </div> -->
 
-         <br>
-         <br>
-
-         <div class="side-info">
+         <!-- <div class="side-info">
             <h5><?php echo $join['username']; ?></h5>
             <br>
             <?php echo '<img src="../uploads/'. $join['img']. '" class="avatar-img">'; ?>
@@ -87,42 +67,44 @@ require __DIR__.'/../app/functions.php';
             <div class="member">Joined: <br>
                <?php echo $join['joined']; ?>
             </div>
-         </div>
+         </div> -->
 
 
+         <!-- Form for voting a post -->
+         <form action="../pages/feed.php?id=<?php echo $join['post_id']?>" method="post" class="votes">
+            <br>
+            <input type="submit" name="up_vote" value="" />
+            <br>
+            <?php echo count($votes); ?>
+            <br>
+            <input type="submit" name="down_vote" value="" />
+         </form>
 
-         <div class="post-title">
-            <h2><?php echo $join['title']; ?></h2>
-         </div>
+
+         <a href="comment.php?id=<?php echo $join['title'] ?>" class="title"><?php echo $join['title']; ?></a>
+
+
+         <!-- <a href="<?php echo $join['url']; ?>" target="_blank" class="img-url"><?php echo substr($join['url'], 0, 60); ?></a> -->
          <br>
-         <div class="post-description">
-            <?php echo $join['description']; ?>
-         </div>
-         <div class="post-url">
-            <a href="<?php echo $join['url']; ?>" target="_blank" class="img-url"><?php echo substr($join['url'], 0, 100); ?></a>
+         <div class="post-footer">
+            Posted by: <strong><?php echo $join['username']; ?></strong>, <?php echo $join['posted']; ?>
+            <br>
+            <a href="" class="comments"><?php echo $count_comments; ?> comments</a>
          </div>
 
-            <!-- Form for voting a post -->
-            <form action="../pages/feed.php?id=<?php echo $join['post_id']?>" method="post" class="votes">
-               <br>
-               <input type="submit" name="up_vote" value="" />
-               <h3><?php echo count($votes); ?></h3>
-               <input type="submit" name="down_vote" value="" />
-            </form>
+
+
+
 
 
             <!-- Footer for every post, displaying when edited, buttons for comment and edit -->
-            <div class="post-footer">
+            <!-- <div class="post-footer">
                <?php echo 'Last edited: '. $join['edited']; ?>
             <?php if (isset($_SESSION['user']) && $join['username'] === $_SESSION['user']['username']): ?>
                <a href="editPost.php?id=<?php echo $join['post_id'] ?>" class="edit-post-btn"></a>
-            <?php endif; ?>
-            <div class="number-comments"></div>
-            <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="comment-btn"></a>
-            </div>
-
+            <?php endif; ?>-->
       </div>
-      <br>
+      <hr>
    <?php endforeach; ?>
 </div>
 
