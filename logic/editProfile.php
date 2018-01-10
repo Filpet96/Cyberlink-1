@@ -1,5 +1,7 @@
 <?php
-require __DIR__.'../../views/header.php';
+// require __DIR__.'../../views/header.php';
+require __DIR__.'/../app/autoload.php';
+
 
 // Logic for editing a user account
 if (isset($_POST['biography'], $_POST['email'])) {
@@ -24,7 +26,7 @@ if (isset($_POST['biography'], $_POST['email'])) {
 
   $statement->execute();
 
-  redirect('../../pages/feed.php');
+  redirect('../../pages/profile.php');
 
 };
 
@@ -49,10 +51,9 @@ if (isset($_POST['password'])) {
 
   $statement->execute();
 
-  redirect('../../pages/feed.php');
+  redirect('../../pages/profile.php');
 
 };
-
 
 $id = $_SESSION;
 foreach($id as $user){

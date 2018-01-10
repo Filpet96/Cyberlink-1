@@ -2,10 +2,6 @@
 require __DIR__.'../../views/header.php';
 ?>
 
-
-
-<p class="header-text">Create post</p>
-
 <?php if (isset($_SESSION['user'])): ?>
    <div class="create-post">
       <form action="../logic/createPost.php" method="post">
@@ -25,10 +21,5 @@ require __DIR__.'../../views/header.php';
       </form>
    </div>
 <?php endif; ?>
-
-
-
-
-
 
 <?php require __DIR__.'../../views/footer.php'; ?>

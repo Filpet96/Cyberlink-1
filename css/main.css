@@ -112,57 +112,96 @@ label {
 /* COMMENTS-PAGE */
 .comments {
    position: absolute;
-   right: 7%;
+   right: 5%;
    top: 8%;
    background-color: #f2f2f2;
    border: 1px solid lightgrey;
-   width: 500px;
-   height: 500px;
+   width: 40%;
+   height: 60%;
+   max-height: 60%;
    font-size: 12px;
    padding: 5px;
+   overflow: auto;
 }
 .comment-page{
    position: absolute;
    top: 8%;
-   left: 5%;
-   width: 700px;
-   height: 100%;
+   left: 3%;
+   width: 45%;
+   height: 80%;
+   background-color: #f2f2f2;
+   border: 1px solid lightgrey;
 }
 .comment-form{
    position: absolute;
    right: 16%;
    top: 75%;
 }
+.comment-url{
+   color: blue;
+}
 .post-title {
    position: absolute;
-   left: 10%;
+   left: 5%;
    top: 3%;
    font-size: 22px;
-   margin-right: 30px;
    font-weight: bold;
 }
 .post-url {
    position: absolute;
-   left: 10%;
+   left: 5%;
    top: 40%;
    font-size: 22px;
    color: blue;
-   margin-right: 30px;
    font-weight: bold;
 }
 .post-description {
    position: absolute;
-   left: 10%;
+   left: 5%;
    top: 15%;
    font-size: 22px;
    margin-right: 30px;
 }
-.post-avatar{
+/* .post-avatar{
    position: absolute;
    top: 0%;
    left: -9%;
    height: 120px;
    width: 100px;
+} */
+.delete-post{
+   position: absolute;
+   top: 77%;
+   left: 41.4%;
+}
+.delete-post-btn {
+   background-color: white;
+   cursor: pointer;
+   border: 1px solid grey;
+   color: black;
+   text-align: center;
+   padding: 5px;
+   outline: none;
+   border-radius: 7px;
+   font-size: 16px;
+   width: 130px;
+}
+.delete-post-btn:hover, .edit-post-btn:hover {
+   color: black;
+}
+.edit-post-btn {
+   position: absolute;
+   top: 80%;
+   left: 40%;
+   background-color: white;
+   cursor: pointer;
+   border: 1px solid grey;
+   color: black;
+   text-align: center;
+   padding: 5px;
+   outline: none;
+   border-radius: 7px;
+   width: 120px;
 }
 .post-comment{
    position: absolute;
@@ -171,6 +210,13 @@ label {
    border-color: grey;
    font-size: 14px;
    margin-top: 5px;
+}
+.post-footer{
+   position: absolute;
+   left: 5%;
+   bottom: 5%;
+   font-size: 14px;
+   font-style: italic;
 }
 .maxchar {
    position: absolute;
@@ -267,9 +313,9 @@ textarea {
    position: absolute;
    top: 10%;
    left: 32%;
-   height: 540px;
-   width: 500px;
-   border: 1px solid grey;
+   height: 70%;
+   width: 40%;
+   border: 1px solid lightgrey;
    background-color: #f2f2f2;
    padding: 10px;
 }
@@ -330,13 +376,11 @@ textarea[type=biography] {
 /* CREATE-POST */
 .create-post {
    position: absolute;
-   top: 45%;
-   left: 50%;
-   width: 600px;
-   height: 400px;
-   margin-right: -50%;
-   transform: translate(-50%, -50%);
-   border: 1px solid grey;
+   top: 25%;
+   left: 26%;
+   width: 48%;
+   height: 50%;
+   border: 1px solid lightgrey;
    background-color: #f2f2f2;
 }
 .post-btn{
@@ -390,10 +434,10 @@ hr {
    position: absolute;
    /* top: 10%; */
    margin-top: -20px;
-   left: -10%;
+   left: -2%;
 }
 .post-feed{
-
+   margin-left: 20px;
 }
 .posted{
    font-style: italic;
@@ -403,7 +447,9 @@ hr {
 .title {
    color: blue;
    margin-left: 1px;
+   margin-right: 20px;
    font-size: 20px;
+   max-width: 80%;
 }
 .comment {
    position: absolute;
@@ -576,13 +622,7 @@ textarea[type="url"]{
    height: 15px;
    padding: 3px;
 }
-.post-footer{
-   position: absolute;
-   left: 10%;
-   top: 50%;
-   font-size: 16px;
-   font-style: italic;
-}
+
 
 .post-id {
    position: absolute;
@@ -594,10 +634,10 @@ textarea[type="url"]{
    position: absolute;
    font-size: 12px;
 }
-.avatar {
+/* .avatar {
    position: relative;
    left: 1%;
-}
+} */
 .post {
    position: absolute;
    /* width: 50%; */
@@ -606,44 +646,13 @@ textarea[type="url"]{
    margin-bottom: 100px;
    padding: 5px;
 }
-.post-content {
-   position: relative;
+/* .post-content { */
    /* height: 300px; */
    /* border: 1px solid lightgrey; */
    /* background-color: #f2f2f2; */
    /* margin: 20px; */
-}
-.delete-post{
-   position: absolute;
-   top: 72%;
-   left: 26.5%;
-}
-.delete-post-btn {
-   background-color: #f2f2f2;
-   cursor: pointer;
-   border: 1px solid grey;
-   color: black;
-   text-align: center;
-   padding: 5px;
-   outline: none;
-   border-radius: 7px;
-   font-size: 16px;
-   width: 130px;
-}
-.edit-post-btn {
-   position: absolute;
-   top: 75%;
-   left: 25%;
-   background-color: #f2f2f2;
-   cursor: pointer;
-   border: 1px solid grey;
-   color: black;
-   text-align: center;
-   padding: 5px;
-   outline: none;
-   border-radius: 7px;
-   width: 120px;
-}
+/* } */
+
 /* PROFILE-PAGE */
 .profile-wrapper {
    position: absolute;

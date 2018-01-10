@@ -2,11 +2,9 @@
 require __DIR__.'../../views/header.php';
 
 $id = $_SESSION;
-
 foreach($id as $person){}
 
-
-   // Uploading/Changing avatar
+   // // Uploading/Changing avatar
      if (isset($_FILES['avatar'])) {
        $info = pathinfo($_FILES['avatar']['name']);
        $ext = $info['extension'];
@@ -25,25 +23,18 @@ foreach($id as $person){}
 
        move_uploaded_file($_FILES['avatar']['tmp_name'], __DIR__.'/../uploads/'.$newname);
 
-       // redirect('../pages/profile.php');
-
-
      }
 
 ?>
-
-
-   <p class="header-text">Profile</p>
-
    <div class="profile-wrapper">
 
       <?php foreach($id as $user): ?>
-         <div class="profile-avatar"><?php echo '<img src="../uploads/'. $user['img']. '" class="side-avatar">'; ?></div>
-         <div class="profile-username"><b>Username: </b><?php echo $user['username']; ?></div>
-         <div class="profile-name"><b>Name: </b><?php echo $user['name']; ?></div>
-         <div class="profile-email"><b>Email: </b><?php echo $user['email']; ?></div>
-         <div class="profile-bio"><b>Biography: </b><?php echo $user['biography']; ?></div>
-         <div class="profile-password"><b>Password: **********</b></div>
+         <?php echo '<img src="../uploads/'. $user['img']. '" class="profile-avatar">'; ?>
+         <div class="profile-username"><b>Username:</b><br><?php echo $user['username']; ?></div>
+         <div class="profile-name"><b>Name:</b><br><?php echo $user['name']; ?></div>
+         <div class="profile-email"><b>Email:</b><br><?php echo $user['email']; ?></div>
+         <div class="profile-password"><b>Password:<br>**********</b></div>
+         <div class="profile-bio"><b>Biography:</b><br><?php echo $user['biography']; ?></div>
 
          <!-- <a href="editProfile.php" class="edit">Edit</a> -->
          <a href="editProfile.php" class="edit">Edit</a>
