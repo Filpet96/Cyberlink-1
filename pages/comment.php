@@ -1,5 +1,5 @@
 <?php
-require __DIR__.'/../views/header.php';
+require __DIR__.'../../views/header.php';
 require __DIR__.'/../logic/feed.php';
 require __DIR__.'/../logic/comment.php';
 
@@ -32,11 +32,14 @@ $user = $statement->fetch(PDO::FETCH_ASSOC);
             <?php echo 'Last edited: '. $join['edited']; ?>
             <br>
             <br>
-            Posted by: <strong><?php echo $user['username']; ?></strong>, <?php echo $post['posted']; ?>
+            Posted by: <strong><?php echo $user['username']; ?></strong> on <?php echo $post['posted']; ?>
          </div>
       </div>
-      <?php if (isset($_SESSION['user']) && $join['username'] === $_SESSION['user']['username']): ?>
-         <a href="editPost.php?id=<?php echo $join['post_id'] ?>" class="edit-post-btn"></a>
+         <?php if($user['username'] === $_SESSION['user']['username']): ?>
+            <form action="../logic/deletePost.php?id=<?php echo $post_id?>" method="post" class="delete-post">
+               <button type="submit" class="delete-post-btn">Delete post</button>
+            </form>
+         <a href="editPost.php?id=<?php echo $join['post_id'] ?>" class="edit-post-btn">Edit post</a>
       <?php endif; ?>
    </div>
 

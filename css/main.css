@@ -390,7 +390,7 @@ hr {
    position: absolute;
    /* top: 10%; */
    margin-top: -20px;
-   left: -5%;
+   left: -10%;
 }
 .post-feed{
 
@@ -613,42 +613,36 @@ textarea[type="url"]{
    /* background-color: #f2f2f2; */
    /* margin: 20px; */
 }
-
-
-
-.delete-post {
+.delete-post{
    position: absolute;
-   bottom: 4%;
-   right: 12%;
-   background-image: url("../img/delete.png");
-   background-size: cover;
-   background-size: 100%;
-   background-color: transparent;
-   height: 20px;
-   width: 20px;
-   cursor: pointer;
-   border: none;
-   opacity: 0.5;
-   outline: none;
+   top: 72%;
+   left: 26.5%;
 }
-#delete {
-   position: absolute;
-   right: 5%;
+.delete-post-btn {
+   background-color: #f2f2f2;
+   cursor: pointer;
+   border: 1px solid grey;
+   color: black;
+   text-align: center;
+   padding: 5px;
+   outline: none;
+   border-radius: 7px;
+   font-size: 16px;
+   width: 130px;
 }
 .edit-post-btn {
    position: absolute;
-   bottom: -60%;
-   right: 2.5%;
-   background-image: url("../img/edit.png");
-   background-size: cover;
-   background-size: 100%;
-   background-color: transparent;
-   height: 15px;
-   width: 15px;
+   top: 75%;
+   left: 25%;
+   background-color: #f2f2f2;
    cursor: pointer;
-   border: none;
-   opacity: 0.5;
+   border: 1px solid grey;
+   color: black;
+   text-align: center;
+   padding: 5px;
    outline: none;
+   border-radius: 7px;
+   width: 120px;
 }
 /* PROFILE-PAGE */
 .profile-wrapper {
@@ -758,12 +752,20 @@ input[name=avatar] {
    left: 48%;
    margin-right: -50%;
    transform: translate(-50%, -50%);
+   font-size: 16px;
+   border-radius: 7px;
+   background-color: #f2f2f2;
+   border: 1px solid grey;
 }
 textarea[type=edit-title] {
    resize: none;
    width: 400px;
+   height: 20px;
+   padding: 5px;
    margin-bottom: 20px;
    outline: none;
+   font-size: 16px;
+   color: black;
 }
 textarea[type=edit-description] {
    margin-left: 1px;
@@ -776,4 +778,8 @@ textarea[type=edit-url] {
    resize: none;
    width: 400px;
    outline: none;
+   font-size: 16px;
+   color: black;
+   height: 20px;
+   padding: 5px;
 }

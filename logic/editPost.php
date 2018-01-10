@@ -33,4 +33,4 @@ $statement->bindParam(':edited', $edited, PDO::PARAM_STR);
 
 $statement->execute();
 
-redirect("../../pages/feed.php");
+redirect("../../pages/comment.php?id=$post_id");

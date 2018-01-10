@@ -6,12 +6,11 @@ declare(strict_types=1);
 
 require __DIR__.'/../app/autoload.php';
 
+// Joining users and comments table
 $query = "SELECT * FROM users LEFT JOIN comments ON users.id=comments.id";
 $statement = $pdo->query($query);
 $statement->execute();
 $comment_users = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-
 
 
 // Logic for posting a comment

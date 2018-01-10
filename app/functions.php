@@ -18,31 +18,14 @@ if (!function_exists('redirect')) {
 }
 
 
-// function countArray(){
-//    $query = "SELECT * FROM comments WHERE post_id = :post_id";
+// Function for counting comments
+// function countComments() {
+//    $post_id = $join['post_id'];
+//    $query = 'SELECT * FROM comments WHERE post_id = :post_id';
 //    $statement = $pdo->prepare($query);
-//    $statement->bindParam(':post_id', $post_id, PDO::PARAM_STR);
+//    $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
 //    $statement->execute();
 //    $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
-// }
-
-
-// Function for voting a post
-//    if(isset($_POST['up_vote'])) {
-//       $up_vote = 1;
 //
-//       // $post_id = $join['post_id'];
-//       $post_id = $_GET['id'];
-//
-//
-//       $query = 'UPDATE posts
-//       SET up_vote = :up_vote + 1
-//       WHERE post_id = :post_id';
-//
-//       $statement = $pdo->prepare($query);
-//       $statement->bindParam(':up_vote', $up_vote, PDO::PARAM_INT);
-//       $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
-//       $statement->execute();
-//
-//       return $up_vote;
+//    echo count($comments);
 // }

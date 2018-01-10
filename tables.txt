@@ -35,5 +35,5 @@ CREATE TABLE "comments" (
 CREATE TABLE "votes" (
          `id`      INTEGER,
          `post_id`      INTEGER,
-         `vote`      INTEGER
+         `vote`      INTEGER NOT NULL
 );

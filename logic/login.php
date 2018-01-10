@@ -14,8 +14,6 @@ if (isset($_POST['username'], $_POST['password'])) {
     // Fetch the user as an associative array.
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-    // If we couldn't find the user in the database, redirect back to the login
-    // page with our custom redirect function.
     if (!$user) {
         redirect('/../../pages/login.php');
     }
@@ -32,5 +30,3 @@ if (isset($_POST['username'], $_POST['password'])) {
       redirect('../../pages/login.php');
     }
 }
-// We should put this redirect in the end of this file since we always want to
-// redirect the user back from this file. We don't know
