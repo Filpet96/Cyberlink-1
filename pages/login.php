@@ -1,8 +1,5 @@
 <?php require __DIR__.'../../views/header.php'; ?>
 
-
-<p class="header-text">Login</p>
-
 <div class="login-wrapper">
    <form action="../logic/login.php" method="post" class="login-form">
 

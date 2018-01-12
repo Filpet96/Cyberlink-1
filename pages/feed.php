@@ -27,7 +27,7 @@ require __DIR__.'/../app/functions.php';
                $statement->execute();
                $statement1->execute();
                $votes = $statement->fetch(PDO::FETCH_ASSOC);
-               $comments = $statement1->fetch(PDO::FETCH_ASSOC);
+               $comments = $statement1->fetchAll(PDO::FETCH_ASSOC);
 
                echo $votes["sum(vote)"];
                ?>
@@ -36,7 +36,7 @@ require __DIR__.'/../app/functions.php';
          </form>
 
             <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="title"><?php echo $join['title']; ?></a>
-            <p class="posted">Posted by: <strong><?php echo $join['username']; ?></strong>, <?php echo $join['posted']; ?></p>
+            <p class="posted">Posted: <strong><?php echo $join['username']; ?></strong>, <?php echo $join['posted']; ?></p>
             <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="comment-btn"><?php echo count($comments); ?> comments</a>
       </div>
       <br>

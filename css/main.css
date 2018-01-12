@@ -50,9 +50,6 @@ footer {
    text-align: center;
    font-size: 12px;
 }
-label {
-
-}
 .btn {
    border: 1px solid lightgrey;
    color: black;
@@ -172,7 +169,7 @@ label {
 .delete-post{
    position: absolute;
    top: 77%;
-   left: 41.4%;
+   left: 38%;
 }
 .delete-post-btn {
    background-color: white;
@@ -192,7 +189,7 @@ label {
 .edit-post-btn {
    position: absolute;
    top: 80%;
-   left: 40%;
+   left: 36.5%;
    background-color: white;
    cursor: pointer;
    border: 1px solid grey;
@@ -249,6 +246,18 @@ textarea[name=comment]{
    margin-top: 10px;
    background-color: lightgrey;
 }
+/* EDIT PROFILE-PAGE */
+label[for=edit-profile]{
+   margin-left: 45px;
+}
+textarea[type=edit-profile]{
+   resize: none;
+   font-size: 16px;
+   height: 25px;
+   width: 400px;
+   margin-left: 80px;
+   margin-bottom: 20px;
+}
 
 /* LOGIN-PAGE */
 h6 {
@@ -265,8 +274,8 @@ h6 {
    position: absolute;
    top: 20%;
    left: 32%;
-   height: 220px;
-   width: 500px;
+   height: 30%;
+   width: 35%;
    border: 1px solid grey;
    background-color: #f2f2f2;
 }
@@ -301,6 +310,7 @@ left: 42%;
    padding-left: 20px;
    padding-right: 20px;
    background-color: white;
+   border: 1px solid grey;
 }
 
 /* REGISTER-PAGE */
@@ -314,7 +324,7 @@ textarea {
    top: 10%;
    left: 32%;
    height: 70%;
-   width: 40%;
+   width: 35%;
    border: 1px solid lightgrey;
    background-color: #f2f2f2;
    padding: 10px;
@@ -324,13 +334,18 @@ textarea {
    left: 36%;
    bottom: 5%;
    background-color: white;
+   border: 1px solid grey;
 }
 input[type=file] {
    border: 1px solid lightgrey;
    margin-left: 37px;
    width: 400px;
 }
-input[type=text] {
+label[for=create-user]{
+   margin-left: 43px;
+   margin-top: 10px;
+}
+input[type=create-user] {
    width: 400px;
    margin: 10px;
    outline: none;
@@ -338,28 +353,6 @@ input[type=text] {
    font-size: 14px;
    padding-left: 10px;
    margin-left: 40px;
-}
-textarea[type=email] {
-   width: 400px;
-   height: 25px;
-   margin: 10px;
-   outline: none;
-   margin-left: 46px;
-   resize: none;
-   font-size: 16px;
-}
-textarea[type=password] {
-   width: 400px;
-   height: 25px;
-   margin: 10px;
-   outline: none;
-   margin-left: 15px;
-   resize: none;
-   font-size: 16px;
-}
-label[for=text]{
-   float: left;
-   margin-left: 43px;
 }
 textarea[type=biography] {
    margin-left: 43px;
@@ -450,6 +443,10 @@ hr {
    margin-right: 20px;
    font-size: 20px;
    max-width: 80%;
+}
+.title:hover{
+   text-decoration: underline;
+   color: blue;
 }
 .comment {
    position: absolute;
@@ -656,22 +653,43 @@ textarea[type="url"]{
 /* PROFILE-PAGE */
 .profile-wrapper {
    position: absolute;
-   left: 15%;
    top: 11%;
-   height: 400px;
-   width: 1000px;
-   border: 2px solid grey;
+   height: 100%;
+   width: 100%;
+   /* border: 2px solid grey; */
 }
 .profile-avatar {
    position: absolute;
-   top: 2.5%;
-   left: 1%;
+   top: 1%;
+   left: 2%;
    /*background-image:    url("../img/Hank.jpg");*/
    background-size: cover;
    background-size: 100%;
-   width: 160px;
+   width: 180px;
    height: 200px;
-   border: 1px solid #404040;
+   border-radius: 50%;
+   border: 2px solid grey;
+}
+.my-posts-header{
+   position: absolute;
+   top: -15%;
+   left: 40%;
+   font-size: 20px;
+   color: black;
+}
+.my-posts{
+   position: absolute;
+   right: 5%;
+   top: 15%;
+   border: 1px solid grey;
+   width: 30%;
+   height: 200px;
+   padding: 10px;
+}
+.my-posts-url{
+   font-size: 14px;
+   color: blue;
+   margin-left: 0px;
 }
 img {
    width: 158px;
@@ -711,8 +729,8 @@ img {
    padding-left: 20px;
    padding-right: 20px;
    font-size: 22px;
-   position: absolute;
-   bottom: 3%;
+   position: fixed;
+   bottom: 5%;
    right: 1%;
    cursor: pointer;
    outline: none;

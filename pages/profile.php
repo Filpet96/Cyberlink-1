@@ -1,5 +1,7 @@
 <?php
 require __DIR__.'../../views/header.php';
+// require __DIR__.'/../app/autoload.php';
+
 
 $id = $_SESSION;
 foreach($id as $person){}
@@ -21,9 +23,19 @@ foreach($id as $person){}
        $statement->bindParam(':id', $identity, PDO::PARAM_INT);
        $statement->execute();
 
-       move_uploaded_file($_FILES['avatar']['tmp_name'], __DIR__.'/../uploads/'.$newname);
-
+      move_uploaded_file($_FILES['avatar']['tmp_name'], __DIR__.'/../uploads/'.$newname);
+         redirect('/../pages/profile.php');
      }
+
+
+
+     // Fetching users posts
+     $user_id = $_SESSION['user']['id'];
+     $query = "SELECT * FROM posts WHERE id = :user_id";
+     $statement = $pdo->prepare($query);
+     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+     $statement->execute();
+     $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
    <div class="profile-wrapper">
@@ -36,7 +48,6 @@ foreach($id as $person){}
          <div class="profile-password"><b>Password:<br>**********</b></div>
          <div class="profile-bio"><b>Biography:</b><br><?php echo $user['biography']; ?></div>
 
-         <!-- <a href="editProfile.php" class="edit">Edit</a> -->
          <a href="editProfile.php" class="edit">Edit</a>
 
          <form action="../pages/profile.php" name="avatar" method="post" enctype="multipart/form-data">
@@ -46,6 +57,15 @@ foreach($id as $person){}
          </form>
 
       <?php endforeach; ?>
+   </div>
+
+   <div class="my-posts">
+      <div class="my-posts-header">My posts</div>
+      <?php foreach($posts as $post): ?>
+         <a href="comment.php?id=<?php echo $post['id'] ?>" class="my-posts-url"><?php echo $post['title']; ?></a>
+         <br>
+      <?php endforeach; ?>
+
    </div>
 
 
