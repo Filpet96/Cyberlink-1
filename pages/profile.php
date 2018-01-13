@@ -29,6 +29,16 @@ foreach($id as $person){}
 
 
 
+     // Fetching users info
+     $user_id = $_GET['id'];
+     $query = "SELECT * FROM users WHERE username = :user_id";
+     $statement = $pdo->prepare($query);
+     $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+     $statement->execute();
+     $test = $statement->fetchAll(PDO::FETCH_ASSOC);
+     foreach($test as $hej){}
+     // die(var_dump($test));
+
      // Fetching users posts
      $user_id = $_SESSION['user']['id'];
      $query = "SELECT * FROM posts WHERE id = :user_id";
@@ -37,18 +47,28 @@ foreach($id as $person){}
      $statement->execute();
      $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+     // Fetching users comments
+     $user_id = $_SESSION['user']['id'];
+     $query = "SELECT * FROM comments WHERE id = :user_id";
+     $statement = $pdo->prepare($query);
+     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+     $statement->execute();
+     $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
    <div class="profile-wrapper">
 
       <?php foreach($id as $user): ?>
-         <?php echo '<img src="../uploads/'. $user['img']. '" class="profile-avatar">'; ?>
-         <div class="profile-username"><b>Username:</b><br><?php echo $user['username']; ?></div>
-         <div class="profile-name"><b>Name:</b><br><?php echo $user['name']; ?></div>
-         <div class="profile-email"><b>Email:</b><br><?php echo $user['email']; ?></div>
+         <?php echo '<img src="../uploads/'. $hej['img']. '" class="profile-avatar">'; ?>
+         <div class="profile-username"><b>Username:</b><br><?php echo $hej['username']; ?></div>
+         <div class="profile-name"><b>Name:</b><br><?php echo $hej['name']; ?></div>
+         <div class="profile-email"><b>Email:</b><br><?php echo $hej['email']; ?></div>
          <div class="profile-password"><b>Password:<br>**********</b></div>
-         <div class="profile-bio"><b>Biography:</b><br><?php echo $user['biography']; ?></div>
+         <div class="profile-bio"><b>Biography:</b><br><?php echo $hej['biography']; ?></div>
 
+      <?php if($hej['username'] == $_SESSION['user']['username']): ?>
          <a href="editProfile.php" class="edit">Edit</a>
+      <?php endif; ?>
 
          <form action="../pages/profile.php" name="avatar" method="post" enctype="multipart/form-data">
             <input type="file" name="avatar" required>
@@ -59,13 +79,20 @@ foreach($id as $person){}
       <?php endforeach; ?>
    </div>
 
+   <div class="my-posts-header">Posts</div>
    <div class="my-posts">
-      <div class="my-posts-header">My posts</div>
       <?php foreach($posts as $post): ?>
          <a href="comment.php?id=<?php echo $post['id'] ?>" class="my-posts-url"><?php echo $post['title']; ?></a>
          <br>
       <?php endforeach; ?>
+   </div>
 
+   <div class="my-comments-header">Comments</div>
+   <div class="my-comments">
+      <?php foreach($comments as $comment): ?>
+         <a href="editComment.php?id=<?php echo $comment['comment_id'] ?>" class="my-posts-url"><?php echo $comment['comment']; ?></a>
+         <br>
+      <?php endforeach; ?>
    </div>
 
 

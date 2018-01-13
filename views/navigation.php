@@ -3,18 +3,16 @@
 
 <div class="nav-wrapper">
    <div class="navbar-left">
-      <!-- <a href="../index.php">Home</a> -->
+      <a href="../index.php">Home</a>
       <a href="../pages/feed.php">Feed</a>
    </div>
-
-
 
    <?php if (isset($_SESSION['user'])): ?>
       <?php foreach($id as $user):?>
 
-      <div class="navbar-right">
-         <a href="/pages/profile.php"><?php echo $user['username']; ?></a>
-      <?php endforeach; ?>
+         <div class="navbar-right">
+            <a href="../pages/profile.php?id=<?php echo $user['username'] ?>" class="nav-url"><?php echo $user['username']; ?></a>
+         <?php endforeach; ?>
 
          <a href="/app/auth/logout.php"><?php echo "Logout"; ?></a>
       </div>

@@ -36,7 +36,9 @@ require __DIR__.'/../app/functions.php';
          </form>
 
             <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="title"><?php echo $join['title']; ?></a>
-            <p class="posted">Posted: <strong><?php echo $join['username']; ?></strong>, <?php echo $join['posted']; ?></p>
+            <p class="posted">Posted: <a href="profile.php?id=<?php echo $join['username'] ?>" class="user-url"><?php echo $join['username']; ?></a>, <?php echo $join['posted']; ?></p>
+
+
             <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="comment-btn"><?php echo count($comments); ?> comments</a>
       </div>
       <br>
