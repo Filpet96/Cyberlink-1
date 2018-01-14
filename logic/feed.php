@@ -1,7 +1,7 @@
 <?php
 
-$session = $_SESSION;
-foreach($session as $id){}
+// $session = $_SESSION;
+// foreach($session as $id){}
 
    // Joining tables: users & posts
    $query = "SELECT * FROM posts LEFT JOIN users ON posts.id=users.id";

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 // require __DIR__.'/../logic/feed.php';
 
-require __DIR__.'/../app/autoload.php';
+// require __DIR__.'/../app/autoload.php';
 
 // Fetching post
 $post_id = $_GET['id'];

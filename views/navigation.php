@@ -11,7 +11,7 @@
       <?php foreach($id as $user):?>
 
          <div class="navbar-right">
-            <a href="../pages/profile.php?id=<?php echo $user['username'] ?>" class="nav-url"><?php echo $user['username']; ?></a>
+            <a href="../pages/profile.php?id=<?php echo $user['id'] ?>" class="nav-url"><?php echo $user['username']; ?></a>
          <?php endforeach; ?>
 
          <a href="/app/auth/logout.php"><?php echo "Logout"; ?></a>
