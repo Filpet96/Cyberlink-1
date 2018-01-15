@@ -1,6 +1,14 @@
 <?php
 require __DIR__.'../../views/header.php';
-require __DIR__.'/../logic/editProfile.php';
+
+// Fetching users info
+$user_id = $_GET['id'];
+$query = "SELECT * FROM users WHERE id = :user_id";
+$statement = $pdo->prepare($query);
+$statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+$statement->execute();
+$user_infos = $statement->fetchAll(PDO::FETCH_ASSOC);
+foreach($user_infos as $user_info){}
 
 ?>
 

@@ -17,7 +17,7 @@ require __DIR__.'../../views/header.php';
       <div>
          <label for="create-user">Username</label>
          <br>
-         <input type="create-user" name="username" placeholder="BigFudge" maxlength="20" required>
+         <input type="create-user" name="username" placeholder="BigFudge" maxlength="15" required>
       </div>
       <div>
          <label for="create-user">Email</label>

@@ -1,9 +1,17 @@
 <?php
 
 require __DIR__.'/../app/autoload.php';
-require __DIR__.'/../app/config.php';
-require __DIR__.'/../logic/feed.php';
 
+// Checking if user already voted
+$user_id = $_SESSION['user'];
+$id = $user_id['id'];
+
+$query = "SELECT * FROM votes WHERE id = :user_id";
+$statement = $pdo->prepare($query);
+$statement->bindParam(':user_id', $id, PDO::PARAM_STR);
+$statement->execute();
+$user_vote = $statement->fetch(PDO::FETCH_ASSOC);
+die(var_dump($user_vote));
 
 // Function for voting a post
       if(isset($_POST['up_vote'])) {
@@ -46,16 +54,3 @@ require __DIR__.'/../logic/feed.php';
 
       redirect("../../pages/feed.php");
    }
-
-
-// // Function for counting comments
-// function countComments() {
-//    $post_id = $join['post_id'];
-//    $query = 'SELECT * FROM comments WHERE post_id = :post_id';
-//    $statement = $pdo->prepare($query);
-//    $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
-//    $statement->execute();
-//    $comments = $statement->fetchAll(PDO::FETCH_ASSOC);
-//
-//    echo count($comments);
-// }

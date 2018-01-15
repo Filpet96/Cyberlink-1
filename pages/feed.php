@@ -1,8 +1,6 @@
 <?php
 require __DIR__.'../../views/header.php';
 require __DIR__.'/../logic/feed.php';
-require __DIR__.'/../app/functions.php';
-// require __DIR__.'/../logic/votes.php';
 
 ?>
 

@@ -19,6 +19,17 @@
    .navbar-right {
       float: center;
    }
+   .nav-url{
+      font-size: 14px;
+   }
+   .login-icon{
+      top: -10%;
+      right: -1%;
+      background-image: url("../img/logout.png");
+      background-size: cover;
+      height: 40px;
+      width: 40px;
+   }
    /* LOGIN-PAGE */
    .login-wrapper {
       position: fixed;
@@ -33,17 +44,18 @@
    .title {
       margin-left: 1px;
       font-size: 16px;
+      max-width: 70%;
    }
    .votes {
       margin-top: -20px;
-      left: -5%;
+      left: -8%;
    }
    .post-feed{
       max-width: 70%;
    }
    .post {
       position: absolute;
-      width: 90%;
+      width: 80%;
       left: 15%;
    }
    .post-content {
@@ -220,6 +232,24 @@ textarea[name=description] {
       font-size: 10px;
       font-style: italic;
    }
+   .delete-post-btn {
+      padding: 5px;
+      outline: none;
+      border-radius: 7px;
+      font-size: 10px;
+      width: 70px;
+   }
+   .delete-post{
+      top: 37%;
+      left: 77%;
+   }
+   .edit-post-btn {
+      top: 40%;
+      left: 74%;
+      height: 12px;
+      width: 60px;
+      font-size: 10px;
+   }
 
    /* PROFILE-PAGE */
    .profile-wrapper{
@@ -257,7 +287,7 @@ textarea[name=description] {
    }
    .profile-name{
       left: 15%;
-      top: 45%;
+      top: 48%;
    }
    .profile-name-online {
       left: 15%;
@@ -265,7 +295,7 @@ textarea[name=description] {
    }
    .profile-email{
       left: 15%;
-      top: 50%;
+      top: 56%;
    }
    .profile-email-online {
       left: 15%;
@@ -277,7 +307,8 @@ textarea[name=description] {
    }
    .profile-bio {
       left: 15%;
-      top: 55%;
+      top: 64%;
+      max-width: 80%;
    }
    .profile-bio-online {
       left: 15%;
@@ -287,9 +318,21 @@ textarea[name=description] {
    }
    .profile-posts{
       left: 15%;
+      top: 85%;
    }
    .profile-comments{
       left: 15%;
+      top: 90%;
+   }
+   .profile-joined{
+      top: 95%;
+      left: 15%;
+   }
+   .profile-joined-online{
+      top: 21%;
+      left: 40%;
+      font-size: 12px;
+      font-style: italic;
    }
    form[name=avatar] {
       top: 15%;
@@ -357,8 +400,27 @@ textarea[name=description] {
       bottom: 15%;
       background-color: white;
    }
+   .edit-profile-wrapper {
+      top: 10%;
+      left: 2%;
+      height: 70%;
+      width: 90%;
+      border: 1px solid #b3b3b3;
+      background-color: #f2f2f2;
+      padding: 10px;
+   }
    label[for=edit-profile]{
       margin-left: 12px;
+   }
+   textarea[type=edit-profile]{
+      font-size: 16px;
+      width: 305px;
+      margin-left: 13px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+   }
+   textarea[type=edit-bio]{
+      width: 305px;
    }
    input[type=text] {
       width: 400px;
@@ -411,5 +473,23 @@ textarea[name=description] {
       left: 30%;
       bottom: 5%;
       background-color: white;
+   }
+   /* EDIT COMMENT-PAGE */
+   .edit-comment-wrapper{
+      height: 50%;
+      width: 88%;
+      left: 3%;
+      top: 30%;
+      border: 1px solid #b3b3b3;
+      background-color: #f2f2f2;
+      padding: 10px;
+   }
+   .edit-comment-btn{
+      bottom: 2%;
+      left: 10%;
+   }
+   .delete-comment-btn{
+      bottom: 2%;
+      left: 48%;
    }
 }

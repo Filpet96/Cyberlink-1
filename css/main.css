@@ -99,11 +99,76 @@ footer {
    text-decoration: none;
    font-size: 18px;
 }
+.login-icon{
+   position: absolute;
+   top: -30%;
+   right: -1%;
+   background-image: url("../img/login.png");
+   background-size: cover;
+   height: 40px;
+   width: 40px;
+}
+.logout-icon{
+   position: absolute;
+   top: -30%;
+   right: -1%;
+   background-image: url("../img/logout.png");
+   background-size: cover;
+   height: 40px;
+   width: 40px;
+}
 
 /* HOME-PAGE */
 .home-wrapper {
    position: absolute;
    top: 20%;
+}
+.new-members-header{
+   position: absolute;
+   top: 9%;
+   right: 4.5%;
+   color: black;
+}
+.new-members{
+   position: absolute;
+   top: 12%;
+   right: 2%;
+   width: 10%;
+   height: 40%;
+   background-color: white;
+   border: 2px solid grey;;
+   color: black;
+   padding: 15px;
+   border-radius: 30px;
+}
+.new-posts-header{
+   position: absolute;
+   top: 46%;
+   left: 7%;
+   color: black;
+   font-size: 18px;
+}
+.new-posts{
+   position: absolute;
+   top: 50%;
+   left: 2%;
+   width: 20%;
+   height: 40%;
+   background-color: white;
+   border: 2px solid grey;;
+   color: black;
+   padding: 15px;
+   border-radius: 30px;
+}
+.member-username{
+   margin: 0;
+   color: blue;
+   font-size: 16px;
+}
+.member-title{
+   margin: 0;
+   color: blue;
+   font-size: 18px;
 }
 
 /* COMMENTS-PAGE */
@@ -252,7 +317,6 @@ textarea[type=edit-profile]{
    margin-left: 13px;
    margin-bottom: 20px;
    margin-top: 10px;
-
 }
 textarea[type=edit-bio]{
    resize: none;
@@ -442,7 +506,7 @@ hr {
    position: absolute;
    /* top: 10%; */
    margin-top: -20px;
-   left: -2%;
+   left: -10%;
 }
 .post-feed{
    margin-left: 20px;
@@ -812,6 +876,16 @@ textarea[type="url"]{
    top: 88%;
    left: 10%;
 }
+.profile-joined{
+   position: absolute;
+   top: 85%;
+   left: 10%;
+}
+.profile-joined-online{
+   position: absolute;
+   top: 92%;
+   left: 40%;
+}
 .edit {
    position: absolute;
    background-color: white;
@@ -906,7 +980,7 @@ textarea[type=edit-url] {
 /* EDIT COMMENT-PAGE */
 .edit-comment-wrapper{
    position: absolute;
-   height: 20%;
+   height: 50%;
    width: 30%;
    left: 35%;
    top: 30%;
@@ -915,6 +989,9 @@ textarea[type=edit-url] {
    padding: 10px;
 }
 textarea[type=edit-comment]{
+   position: absolute;
+   top: 60%;
+   left: 0%;
    background-color: white;
    font-size: 16px;
    width: 90%;
@@ -939,5 +1016,4 @@ textarea[type=edit-comment]{
    border: 1px solid #b3b3b3;
    border-radius: 7px;
    font-size: 16px;
-
 }
