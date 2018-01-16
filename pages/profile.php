@@ -15,6 +15,8 @@ foreach($id as $person){}
    $url_users = $statement->fetchAll(PDO::FETCH_ASSOC);
    foreach($url_users as $url_user){}
 
+      // die(var_dump($comments));
+
       ?>
       <div class="profile-wrapper">
          <?php echo '<img src="../uploads/'. $url_user['img']. '" class="profile-avatar">'; ?>
@@ -39,13 +41,33 @@ foreach($id as $person){}
                <div class="profile-posts-online"><b>Posts: </b><?php echo count($count_posts); ?></div>
                <div class="profile-comments-online"><b>Comments: </b><?php echo count($count_comments); ?></div>
                <div class="profile-joined-online"><b>Joined: </b><?php echo $url_user['joined']; ?></div>
-
             <?php endforeach; ?>
+
             <form action="../logic/uploadAvatar.php" name="avatar" method="post" enctype="multipart/form-data">
                <input type="file" name="avatar" required>
                <br>
                <button type="submit" class="upload-avatar">Upload</button>
             </form>
+
+            <div class="dropdown-posts">
+               <span>Posts(<?php echo count($posts); ?>)</span>
+               <div class="dropdown-posts-content">
+                  <?php foreach($posts as $post): ?>
+                     <a href="comment.php?id=<?php echo $post['post_id'] ?>" class="my-posts-url"><?php echo $post['title']; ?></a>
+                     <br>
+                  <?php endforeach; ?>
+               </div>
+            </div>
+
+            <div class="dropdown-comments">
+               <span>Comments(<?php echo count($comments); ?>)</span>
+               <div class="dropdown-comments-content">
+                  <?php foreach($comments as $comment): ?>
+                     <a href="editComment.php?id=<?php echo $comment['comment_id'] ?>" class="my-posts-url"><?php echo $comment['comment']; ?></a>
+                     <br>
+                  <?php endforeach; ?>
+               </div>
+            </div>
 
             <div class="dropdown">
                <span>Settings</span>

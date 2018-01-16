@@ -1,7 +1,6 @@
 <?php
 
 // Fetching users
-// $query = "SELECT * FROM users";
 $query = "SELECT * FROM users ORDER BY joined ASC LIMIT 10";
 $statement = $pdo->prepare($query);
 $statement->execute();

@@ -16,7 +16,8 @@ if (isset($_POST['name'], $_POST['username'], $_POST['email'], $_POST['password'
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $joined = date("d, m, Y");
+    $joined = date("M d, Y");
+
 
 
 

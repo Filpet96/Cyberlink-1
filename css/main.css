@@ -506,7 +506,7 @@ hr {
 .votes {
    position: absolute;
    margin-top: -20px;
-   left: -10%;
+   left: -3%;
 }
 .post-feed{
    margin-left: 20px;
@@ -750,11 +750,11 @@ textarea[type="url"]{
    padding-bottom: 30px;
 }
 .profile-wrapper-online{
-   position: fixed;
+   position: absolute;
    top: 10%;
    left: 20%;
    width: 60%;
-   height: 85%;
+   height: 650px;
    border: 1px solid #b3b3b3;
    background-color: #f2f2f2;
    border-radius: 10px;
