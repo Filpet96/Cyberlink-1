@@ -29,5 +29,5 @@ The assignment is to create a Reddit clone.
 
 
 ### Site testers:
-####
-####
+#### Kristian Liljander
+#### Filip Petersson
