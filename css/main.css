@@ -8,6 +8,10 @@ body {
    background-size: cover;
 	background-attachment: fixed;
 }
+li{
+   margin-top: -15px;
+   margin-bottom: -20px;
+}
 a {
    text-decoration: none;
    outline: none;
@@ -196,6 +200,12 @@ footer {
    background-color: #f2f2f2;
    border: 1px solid #b3b3b3;
    overflow-wrap: break-word;
+}
+.number-comments{
+   position: absolute;
+   top: 20%;
+   color: black;
+   right: 15%;
 }
 .comment-form{
    position: absolute;
@@ -739,6 +749,7 @@ textarea[type="url"]{
     display: block;
     cursor: pointer;
 }
+.dropdown-posts, .dropdown-comments{display: none;}
 .profile-wrapper {
    position: absolute;
    top: 15%;

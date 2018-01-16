@@ -2,10 +2,6 @@
 require __DIR__.'../../views/header.php';
 require __DIR__.'../../logic/profile.php';
 
-$id = $_SESSION;
-foreach($id as $person){}
-
-
    // Fetching users info
    $user_id = $_GET['id'];
    $query = "SELECT * FROM users WHERE id = :user_id";
@@ -15,9 +11,8 @@ foreach($id as $person){}
    $url_users = $statement->fetchAll(PDO::FETCH_ASSOC);
    foreach($url_users as $url_user){}
 
-      // die(var_dump($comments));
-
       ?>
+
       <div class="profile-wrapper">
          <?php echo '<img src="../uploads/'. $url_user['img']. '" class="profile-avatar">'; ?>
          <div class="profile-username"><b>Username: </b><?php echo $url_user['username']; ?></div>
@@ -53,7 +48,7 @@ foreach($id as $person){}
                <span>Posts(<?php echo count($posts); ?>)</span>
                <div class="dropdown-posts-content">
                   <?php foreach($posts as $post): ?>
-                     <a href="comment.php?id=<?php echo $post['post_id'] ?>" class="my-posts-url"><?php echo $post['title']; ?></a>
+                     <a href="comment.php?id=<?php echo $post['post_id'] ?>" class="my-posts-url"><?php echo "<li>". $post['title']. "</li>"; ?></a>
                      <br>
                   <?php endforeach; ?>
                </div>
@@ -63,7 +58,7 @@ foreach($id as $person){}
                <span>Comments(<?php echo count($comments); ?>)</span>
                <div class="dropdown-comments-content">
                   <?php foreach($comments as $comment): ?>
-                     <a href="editComment.php?id=<?php echo $comment['comment_id'] ?>" class="my-posts-url"><?php echo $comment['comment']; ?></a>
+                     <a href="editComment.php?id=<?php echo $comment['comment_id'] ?>" class="my-posts-url"><?php echo "<li>". $comment['comment']. "</li>"; ?></a>
                      <br>
                   <?php endforeach; ?>
                </div>

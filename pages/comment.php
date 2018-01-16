@@ -17,6 +17,7 @@ require __DIR__.'/../logic/comment.php';
       Posted by: <a href="profile.php?id=<?php echo $user['id'] ?>" class="member-username"><?php echo $user['username']; ?></a> on <?php echo $post['posted']; ?>
    </div>
 </div>
+
 <?php if($user['username'] === $_SESSION['user']['username']): ?>
    <form action="../logic/deletePost.php?id=<?php echo $post_id?>" method="post" class="delete-post">
       <button type="submit" class="delete-post-btn">Delete post</button>
@@ -24,7 +25,6 @@ require __DIR__.'/../logic/comment.php';
    <a href="editPost.php?id=<?php echo $join['post_id'] ?>" class="edit-post-btn">Edit post</a>
 <?php endif; ?>
 </div>
-
 
 <div class="comments">
    <?php foreach($comment_users as $comment_user): ?>
@@ -37,13 +37,13 @@ require __DIR__.'/../logic/comment.php';
 </div>
 
 <?php if(isset($_SESSION['user'])): ?>
-<form action="../logic/postComment.php?id=<?php echo $post_id?>" method="post" class="comment-form">
-   <div>
-      <textarea type="comment" name="comment" maxlength="100" required></textarea>
-   </div>
-   <div class="maxchar">Maxchar: 100<br></div>
-   <button type="submit" class="post-comment btn">Post</button>
-</form>
+   <form action="../logic/postComment.php?id=<?php echo $post_id?>" method="post" class="comment-form">
+      <div>
+         <textarea type="comment" name="comment" maxlength="100" required></textarea>
+      </div>
+      <div class="maxchar">Maxchar: 100<br></div>
+      <button type="submit" class="post-comment btn">Post</button>
+   </form>
 <?php endif; ?>
 
 <?php require __DIR__.'../../views/footer.php'; ?>
