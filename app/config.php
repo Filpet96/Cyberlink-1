@@ -4,6 +4,6 @@ declare(strict_types=1);
 
 
 return [
-    'title' => 'RedditClone',
+    'title' => 'Cyberlink',
     'database_path' => sprintf('sqlite:%s/../database/database.db', __DIR__),
 ];

@@ -2,6 +2,8 @@
 require __DIR__.'/views/header.php';
 require __DIR__.'/logic/homePage.php';
 
+$i = 1;
+$y= 1;
 ?>
 
 
@@ -13,7 +15,7 @@ require __DIR__.'/logic/homePage.php';
       <br>
       <?php foreach($users as $user): ?>
          <div class="member-username">
-            <a href="/pages/profile.php?id=<?php echo $user['id'] ?>" class="member-username"><?php echo $user['username']; ?></a>
+            <a href="/pages/profile.php?id=<?php echo $user['id'] ?>" class="member-username"><?php echo "<b>". $i++. ".</b> "; ?><?php echo $user['username']; ?></a>
          </div>
       <?php endforeach; ?>
    </div>
@@ -22,7 +24,7 @@ require __DIR__.'/logic/homePage.php';
       <div class="new-posts-header">Recent posts</div>
       <br>
       <?php foreach($posts as $post): ?>
-         <a href="/pages/comment.php?id=<?php echo $post['post_id'] ?>" class="member-title"><?php echo $post['title']; ?></a>
+         <a href="/pages/comment.php?id=<?php echo $post['post_id'] ?>" class="member-title"><?php echo "<b>". $y++. ".</b> ". substr($post['title'], 0, 50); ?></a>
          <br>
       <?php endforeach; ?>
    </div>

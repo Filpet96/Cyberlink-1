@@ -2,7 +2,7 @@
 
 // Fetching users
 // $query = "SELECT * FROM users";
-$query = "SELECT * FROM users ORDER BY joined DESC LIMIT 10";
+$query = "SELECT * FROM users ORDER BY joined ASC LIMIT 10";
 $statement = $pdo->prepare($query);
 $statement->execute();
 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
