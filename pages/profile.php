@@ -38,10 +38,16 @@ require __DIR__.'../../logic/profile.php';
                <div class="profile-joined-online"><b>Joined: </b><?php echo $url_user['joined']; ?></div>
             <?php endforeach; ?>
 
+            <!-- Form for uploading avatar -->
             <form action="../logic/uploadAvatar.php" name="avatar" method="post" enctype="multipart/form-data">
                <input type="file" name="avatar" required>
                <br>
                <button type="submit" class="upload-avatar">Upload</button>
+            </form>
+
+            <!-- Form for deleting user/user-actions -->
+            <form action="../logic/deleteUser.php?id=<?php echo $user_id?>" method="post" name="delete-user">
+               <button type="submit" class="delete-user">Delete account</button>
             </form>
 
             <div class="dropdown-posts">
