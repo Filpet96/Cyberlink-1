@@ -4,6 +4,7 @@ require __DIR__.'/../logic/feed.php';
 require __DIR__.'/../logic/comment.php';
 $post_id = $_GET['id'];
 
+// die(var_dump($join));
 ?>
 
 <div class="comment-page">
