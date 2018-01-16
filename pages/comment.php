@@ -2,6 +2,7 @@
 require __DIR__.'/../views/header.php';
 require __DIR__.'/../logic/feed.php';
 require __DIR__.'/../logic/comment.php';
+$post_id = $_GET['id'];
 
 ?>
 
@@ -22,7 +23,7 @@ require __DIR__.'/../logic/comment.php';
    <form action="../logic/deletePost.php?id=<?php echo $post_id?>" method="post" class="delete-post">
       <button type="submit" class="delete-post-btn">Delete post</button>
    </form>
-   <a href="editPost.php?id=<?php echo $join['post_id'] ?>" class="edit-post-btn">Edit post</a>
+   <a href="editPost.php?id=<?php echo $post_id ?>" class="edit-post-btn">Edit post</a>
 <?php endif; ?>
 </div>
 

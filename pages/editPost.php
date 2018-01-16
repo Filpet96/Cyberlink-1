@@ -11,6 +11,7 @@ $statement->bindParam(':post_id', $post_id, PDO::PARAM_INT);
 $statement->execute();
 
 $post = $statement->fetch(PDO::FETCH_ASSOC);
+// die(var_dump($post_id));
 
 
 ?>
