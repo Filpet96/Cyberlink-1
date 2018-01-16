@@ -7,11 +7,11 @@ require __DIR__.'/../logic/feed.php';
 <div class="post">
    <?php foreach($joined as $join): ?>
       <div class="post-feed">
-         <!-- Form for voting a post -->
-         <form action="../logic/votes.php?id=<?php echo $join['post_id']?>" method="post" class="votes">
-            <br>
-            <input type="submit" name="up_vote" value="" />
-            <br>
+            <!-- Form for voting a post -->
+            <form action="../logic/votes.php?id=<?php echo $join['post_id']?>" method="post" class="votes">
+               <br>
+               <input type="submit" name="up_vote" value="" />
+               <br>
                <?php
                $post_id = $join['post_id'];
                $query = 'SELECT sum(vote) FROM votes WHERE post_id = :post_id';
@@ -27,13 +27,12 @@ require __DIR__.'/../logic/feed.php';
 
                echo $votes["sum(vote)"];
                ?>
-            <br>
-            <input type="submit" name="down_vote" value="" />
-         </form>
-
-            <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="title"><?php echo $join['title']; ?></a>
-            <p class="posted">Posted: <a href="profile.php?id=<?php echo $join['id'] ?>" class="user-url"><?php echo $join['username']; ?></a>, <?php echo $join['posted']; ?></p>
-            <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="comment-btn"><?php echo count($comments); ?> comments</a>
+               <br>
+               <input type="submit" name="down_vote" value="" />
+            </form>
+         <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="title"><?php echo $join['title']; ?></a>
+         <p class="posted">Posted: <a href="profile.php?id=<?php echo $join['id'] ?>" class="user-url"><?php echo $join['username']; ?></a>, <?php echo $join['posted']; ?></p>
+         <a href="comment.php?id=<?php echo $join['post_id'] ?>" class="comment-btn"><?php echo count($comments); ?> comments</a>
       </div>
       <br>
       <br>

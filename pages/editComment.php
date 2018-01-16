@@ -33,15 +33,9 @@ $comment = $statement->fetch(PDO::FETCH_ASSOC);
 
 <div class="edit-comment-wrapper">
    <div class="commented-post">
-      <?php echo $post_id['title']; ?>
-      <br>
-      <br>
-      <br>
-      <?php echo $post_id['description']; ?>
-      <br>
-      <br>
-      <br>
-      <?php echo $post_id['url']; ?>
+      <div class="edit-comment"><?php echo $post_id['title']; ?></div>
+      <div class="edit-comment"><?php echo $post_id['description']; ?></div>
+      <div class="edit-comment"><?php echo $post_id['url']; ?></div>
    </div>
 
 

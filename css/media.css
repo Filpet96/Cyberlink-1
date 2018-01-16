@@ -23,6 +23,16 @@
       font-size: 14px;
    }
    .login-icon{
+      position: absolute;
+      top: -10%;
+      right: -1%;
+      background-image: url("../img/login.png");
+      background-size: cover;
+      height: 40px;
+      width: 40px;
+   }
+   .logout-icon{
+      position: absolute;
       top: -10%;
       right: -1%;
       background-image: url("../img/logout.png");
@@ -30,15 +40,76 @@
       height: 40px;
       width: 40px;
    }
+   /* HOME-PAGE */
+   .index-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("/img/1.gif");
+      background-size: cover;
+      background-size: 120% 80%;
+   }
+   .new-members-header{
+      top: 1%;
+      right: 30%;
+      color: black;
+   }
+   .new-members{
+      top: 20%;
+      right: 5%;
+      width: 80%;
+      height: 30%;
+      font-size: 16px;
+      overflow: auto;
+   }
+   .new-posts-header{
+      top: 1%;
+      left: 32%;
+      color: black;
+      font-size: 18px;
+   }
+   .new-posts{
+      top: 60%;
+      left: 5%;
+      width: 80%;
+      height: 30%;
+      overflow: auto;
+   }
    /* LOGIN-PAGE */
    .login-wrapper {
       position: fixed;
       top: 20%;
-      left: 32%;
+      left: 5%;
       height: 220px;
-      width: 500px;
+      width: 90%;
       border: 1px solid grey;
       background-color: #f2f2f2;
+   }
+   input[type=username] {
+      margin-left: -40px;
+      width: 90%;
+      height: 20px;
+      font-size: 12px;
+      border: 1px solid grey;
+   }
+   input[type=password] {
+      margin-left: -40px;
+      width: 90%;
+      height: 20px;
+      font-size: 12px;
+      border: 1px solid grey;
+   }
+   label[for=login-password], label[for=login-username]{
+      position: absolute;
+      left: 38%;
+   }
+   .login-btn {
+      left: 35%;
+   }
+   h6 {
+      position: absolute;
+      bottom: 10%;
+      left: 27%;
    }
    /* FEED-PAGE */
    .title {
@@ -253,80 +324,97 @@ textarea[name=description] {
 
    /* PROFILE-PAGE */
    .profile-wrapper{
-      position: absolute;
-      left: 2%;
+      left: 4%;
       top: 8.5%;
-      height: 90%;
-      width: 95%;
+      height: 85%;
+      width: 20%;
       border: 1px solid lightgrey;
       background-color: #f2f2f2;
    }
    .profile-wrapper-online {
-      position: absolute;
-      left: 2%;
+      left: 4%;
       top: 8.5%;
       height: 1200px;
-      width: 95%;
+      width: 340px;
+      /* max-width: 90%; */
       border: 1px solid lightgrey;
       background-color: #f2f2f2;
    }
+   span{
+      font-size: 12px;
+      text-align: center;
+      color: black;
+   }
+   .dropdown {
+       position: fixed;
+       top: 9%;
+       left: 5%;
+       display: inline-block;
+       background-color: white;
+       border: 1px solid grey;
+       border-radius: 10px;
+       padding: 5px;
+   }
+   .dropdown-content {
+       display: none;
+       position: absolute;
+       background-color: #f9f9f9;
+       min-width: 200px;
+       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+       padding: 5px 5px;
+       z-index: 1;
+   }
+   .dropdown:hover .dropdown-content {
+       display: block;
+       cursor: pointer;
+   }
    .profile-avatar, .profile-avatar-online{
-      position: absolute;
       left: 30%;
-      top: 1%;
       width: 150px;
       height: 150px;
+      margin-top: 10px;
    }
    .profile-username{
-      left: 15%;
-      top: 40%;
+      left: 10%;
+      margin-top: 20px;
    }
    .profile-username-online {
-      left: 15%;
-      top: 23%;
+      left: 10%;
    }
    .profile-name{
-      left: 15%;
-      top: 48%;
+      left: 10%;
+      margin: 10px;
    }
    .profile-name-online {
-      left: 15%;
-      top: 26%;
+      left: 10%;
    }
    .profile-email{
-      left: 15%;
-      top: 56%;
+      left: 10%;
+      max-width: 80%;
    }
    .profile-email-online {
-      left: 15%;
-      top: 29%;
+      left: 10%;
    }
    .profile-password-online {
-      left: 15%;
-      top: 32%;
+      left: 10%;
    }
    .profile-bio {
-      left: 15%;
-      top: 64%;
+      left: 10%;
       max-width: 80%;
    }
    .profile-bio-online {
-      left: 15%;
-      top: 35%;
-      margin-right: 20px;
-      max-width: 90%;
+      left: 10%;
+      max-width: 80%;
    }
    .profile-posts{
-      left: 15%;
-      top: 85%;
+      left: 10%;
+      margin-top: 50px;
    }
    .profile-comments{
-      left: 15%;
-      top: 90%;
+      left: 10%;
    }
    .profile-joined{
-      top: 95%;
-      left: 15%;
+      left: 10%;
    }
    .profile-joined-online{
       top: 21%;
@@ -336,7 +424,7 @@ textarea[name=description] {
    }
    form[name=avatar] {
       top: 15%;
-      left: 15%;
+      left: 11%;
    }
    input[name=avatar] {
       width: 200px;
@@ -349,7 +437,7 @@ textarea[name=description] {
    .upload-avatar {
       position: absolute;
       top: 110%;
-      left: 37%;
+      left: 35%;
       height: 25px;
       width: 100px;
       background-color: white;
@@ -362,8 +450,9 @@ textarea[name=description] {
       padding-left: 20px;
       padding-right: 20px;
       font-size: 22px;
-      bottom: 1%;
-      right: 1%;
+      left: 1%;
+      width: 40px;
+      height: 20px;
    }
    .my-comments-header{
       top: 72%;

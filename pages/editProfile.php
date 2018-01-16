@@ -21,14 +21,9 @@ foreach($user_infos as $user_info){}
          <textarea type="edit-profile" name="email"><?php echo $user_info['email']; ?></textarea>
       </div>
       <div>
-         <label for="edit-profile">New password</label>
+         <label for="edit-profile">New bio(max 300 chars)</label>
          <br>
-         <textarea type="edit-profile" name="password"></textarea>
-      </div>
-      <div>
-         <label for="edit-profile">New bio</label>
-         <br>
-         <textarea type="edit-bio" name="biography"><?php echo $user_info['biography']; ?></textarea>
+         <textarea type="edit-bio" name="biography" maxlength="300"><?php echo $user_info['biography']; ?></textarea>
       </div>
       <button type="submit" class="register-btn btn">Save changes</button>
    </form>
